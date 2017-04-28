@@ -1,0 +1,9 @@
+.preview {
+  display: flex;
+  justify-content: center;
+}
+
+.preview-session,
+.preview-break {
+  padding: 20px;
+}

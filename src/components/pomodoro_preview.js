@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import '../../style/pomodoro_preview.css';
+
 export default class PomodoroPreview extends Component {
   render() {
     return (
