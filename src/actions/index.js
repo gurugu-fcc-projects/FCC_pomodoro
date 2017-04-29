@@ -1,5 +1,5 @@
-import { START_TIMER } from './types';
+import { RUN_TIMER } from './types';
 
-export const startTimer = () => {
+export const runTimer = () => {
 
 }

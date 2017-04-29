@@ -1,1 +1,1 @@
-export const START_TIMER = 'start_timer';
+export const RUN_TIMER = 'run_timer';
