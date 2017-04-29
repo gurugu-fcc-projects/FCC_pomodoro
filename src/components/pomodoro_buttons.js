@@ -7,8 +7,12 @@ import '../../style/pomodoro_buttons.css';
 
 class PomodoroButtons extends Component {
   render() {
-    const startTimer = (setTime) => {
+    /*
+     run startTimer for both START and NEXT buttons, but with the NEXT
+     button it will change timer and only then run it
+    */
 
+    const startTimer = (setTime) => {
       const getCurrentTime = () => this.props.runningTime;
       const runTimer = () => {
         const time = getCurrentTime();
@@ -18,7 +22,6 @@ class PomodoroButtons extends Component {
           this.props.updateTime(time);
         }
       }
-
       const timeInterval = window.setInterval(runTimer, 1000);
     }
 

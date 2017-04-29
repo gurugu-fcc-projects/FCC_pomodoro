@@ -3,7 +3,9 @@ import {
 } from '../actions/types';
 
 const INIT_STATE = {
-  setTime: 25,
+  sessionTime: 25,
+  breakTime: 5,
+  currentTimer: 'sessionTimer',
   runningTime: 25
 }
 
