@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import '../../style/pomodoro_preview.css';
 
-export default class PomodoroPreview extends Component {
+class PomodoroPreview extends Component {
   render() {
+    const { setTime } = this.props;
+    
     return (
       <div className="preview">
         <div className="preview-session">
           <h3>SESSION</h3>
-          <div>25:00</div>
+          <div>{setTime}</div>
         </div>
         <div className="preview-break">
           <h3>BREAK</h3>
@@ -18,3 +22,15 @@ export default class PomodoroPreview extends Component {
     );
   }
 }
+
+PomodoroPreview.propTypes = {
+  setTime: PropTypes.number
+}
+
+const mapStateToProps = (state) => {
+  return {
+    setTime: state.data.setTime
+  };
+};
+
+export default connect(mapStateToProps)(PomodoroPreview);

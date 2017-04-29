@@ -1,5 +1,10 @@
-import { RUN_TIMER } from './types';
+import {
+  RUN_TIMER
+} from './types';
 
-export const runTimer = () => {
-
+export const updateTime = (runningTime) => {
+  return {
+    type: RUN_TIMER,
+    payload: runningTime - 1
+  };
 }

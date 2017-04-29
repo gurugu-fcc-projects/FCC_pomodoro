@@ -1,15 +1,29 @@
 import React, { Component } from 'react';
+import { PropTypes } from 'prop-types';
+import { connect } from 'react-redux';
 
 import '../../style/pomodoro_timer.css';
 
-export default class PomodoroTimer extends Component {
+class PomodoroTimer extends Component {
   render() {
-    const time = '25:00';
+    const { runningTime } = this.props;
 
     return (
       <div className="timer">
-        {time}
+        {runningTime}
       </div>
     );
   }
 }
+
+PomodoroTimer.propTypes = {
+  runningTime: PropTypes.number
+}
+
+const mapStateToProps = (state) => {
+  return {
+    runningTime: state.data.runningTime
+  };
+}
+
+export default connect(mapStateToProps)(PomodoroTimer);

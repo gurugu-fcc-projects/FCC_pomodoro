@@ -1,15 +1,46 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import * as actions from '../actions';
 
 import '../../style/pomodoro_buttons.css';
 
-export default class PomodoroButtons extends Component {
+class PomodoroButtons extends Component {
   render() {
+    const startTimer = (setTime) => {
+
+      const getCurrentTime = () => this.props.runningTime;
+      const runTimer = () => {
+        const time = getCurrentTime();
+        if (time <= 0) {
+          window.clearInterval(timeInterval);
+        } else {
+          this.props.updateTime(time);
+        }
+      }
+
+      const timeInterval = window.setInterval(runTimer, 1000);
+    }
+
     return (
       <div className="buttons">
-        <button>START</button>
+        <button onClick={startTimer}>START</button>
         <button>NEXT</button>
         <button>RESET</button>
       </div>
     );
   }
 }
+
+PomodoroButtons.propTypes = {
+  runningTime: PropTypes.number,
+  updateTime: PropTypes.func
+}
+
+const mapStateToProps = (state) => {
+  return {
+    runningTime: state.data.runningTime
+  };
+}
+
+export default connect(mapStateToProps, actions)(PomodoroButtons);

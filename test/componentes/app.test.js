@@ -8,7 +8,7 @@ const setup = () => {
   return { enzymeWrapper };
 }
 
-describe('App', () => {
+describe.skip('App', () => {
   let enzymeWrapper;
 
   beforeEach(() => {

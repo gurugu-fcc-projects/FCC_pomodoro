@@ -1,8 +1,10 @@
 import { RUN_TIMER } from '../../src/actions/types';
-import { runTimer } from '../../src/actions/index';
+import { updateTime } from '../../src/actions/index';
 
-describe('runTimer', () => {
+describe('updateTime', () => {
   it('returns a number minus one', () => {
-    expect(runTimer(1111)).toEqual(111);
+    const actionObject = {type: RUN_TIMER, payload: 9};
+
+    expect(updateTime(10)).toEqual(actionObject);
   });
 });
