@@ -8,7 +8,7 @@ import PomodoroSettings from './pomodoro_settings';
 export default class App extends Component {
   render() {
     return (
-      <div>
+      <div className="pomodoro">
         <PomodoroPreview />
         <PomodoroTimer />
         <PomodoroButtons />
