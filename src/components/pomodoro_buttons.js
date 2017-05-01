@@ -12,17 +12,21 @@ class PomodoroButtons extends Component {
      button it will change timer and only then run it
     */
 
-    const startTimer = (setTime) => {
-      const getCurrentTime = () => this.props.runningTime;
-      const runTimer = () => {
-        const time = getCurrentTime();
-        if (time <= 0) {
+    const startTimer = () => {
+      // const runTimer = () => {
+      //   if (this.props.runningTime <= 0) {
+      //     window.clearInterval(timeInterval);
+      //   } else {
+      //     this.props.updateTime(this.props.runningTime);
+      //   }
+      // }
+      const timeInterval = window.setInterval(() => {
+        if (this.props.runningTime <= 0) {
           window.clearInterval(timeInterval);
         } else {
-          this.props.updateTime(time);
+          this.props.updateTime(this.props.runningTime);
         }
-      }
-      const timeInterval = window.setInterval(runTimer, 1000);
+      }, 1000);
     }
 
     return (

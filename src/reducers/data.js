@@ -5,7 +5,7 @@ import {
 const INIT_STATE = {
   sessionTime: 25,
   breakTime: 5,
-  currentTimer: 'sessionTimer',
+  currentTimer: 'session',
   runningTime: 25
 }
 
