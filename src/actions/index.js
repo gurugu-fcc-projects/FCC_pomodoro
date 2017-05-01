@@ -9,3 +9,9 @@ export const updateTime = (runningTime) => {
     payload: runningTime - 1
   };
 }
+
+export const changeTimer = (currentTimer) => {
+  return currentTimer === 'session'
+    ? {type: CHANGE_TIMER, payload: 'break'}
+    : {type: CHANGE_TIMER, payload: 'session'};
+}
