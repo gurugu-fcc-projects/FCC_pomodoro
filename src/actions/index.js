@@ -1,5 +1,6 @@
 import {
-  RUN_TIMER
+  RUN_TIMER,
+  CHANGE_TIMER
 } from './types';
 
 export const updateTime = (runningTime) => {

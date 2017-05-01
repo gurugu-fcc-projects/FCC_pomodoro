@@ -13,13 +13,6 @@ class PomodoroButtons extends Component {
     */
 
     const startTimer = () => {
-      // const runTimer = () => {
-      //   if (this.props.runningTime <= 0) {
-      //     window.clearInterval(timeInterval);
-      //   } else {
-      //     this.props.updateTime(this.props.runningTime);
-      //   }
-      // }
       const timeInterval = window.setInterval(() => {
         if (this.props.runningTime <= 0) {
           window.clearInterval(timeInterval);
