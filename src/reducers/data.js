@@ -1,6 +1,7 @@
 import {
   RUN_TIMER,
-  CHANGE_TIMER
+  CHANGE_TIMER,
+  CHANGE_RUNTIME
 } from '../actions/types';
 
 const INIT_STATE = {
@@ -17,12 +18,16 @@ export default function (state = INIT_STATE, action) {
         ...state,
         runningTime: action.payload
       };
-    case CHANGE_TIMER: {
+    case CHANGE_TIMER:
       return {
         ...state,
         currentTimer: action.payload
       };
-    }
+    case CHANGE_RUNTIME:
+      return {
+        ...state,
+        runningTime: action.payload
+      };
     default:
       return state;
   }

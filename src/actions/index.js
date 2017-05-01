@@ -1,6 +1,7 @@
 import {
   RUN_TIMER,
-  CHANGE_TIMER
+  CHANGE_TIMER,
+  CHANGE_RUNTIME
 } from './types';
 
 export const updateTime = (runningTime) => {
@@ -10,8 +11,16 @@ export const updateTime = (runningTime) => {
   };
 }
 
-export const changeTimer = (currentTimer) => {
-  return currentTimer === 'session'
-    ? {type: CHANGE_TIMER, payload: 'break'}
-    : {type: CHANGE_TIMER, payload: 'session'};
+export const changeTimer = (newTimer) => {
+  return {
+    type: CHANGE_TIMER,
+    payload: newTimer
+  };
+}
+
+export const changeRunningTime = (newRunningTime) => {
+  return {
+    type: CHANGE_RUNTIME,
+    payload: newRunningTime
+  };
 }
