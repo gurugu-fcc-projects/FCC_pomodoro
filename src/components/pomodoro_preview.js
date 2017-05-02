@@ -12,11 +12,15 @@ class PomodoroPreview extends Component {
       <div className="preview">
         <div className="preview-session">
           <h3>SESSION</h3>
+          <button>+</button>
           <div>{sessionLength}</div>
+          <button>-</button>
         </div>
         <div className="preview-break">
           <h3>BREAK</h3>
+          <button>+</button>
           <div>{breakLength}</div>
+          <button>-</button>
         </div>
       </div>
     );
