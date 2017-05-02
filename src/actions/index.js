@@ -8,7 +8,7 @@ import {
 export const startStopTimer = (runState) => {
   return {
     type: START_STOP_TIMER,
-    payload: runState
+    payload: runState === 'start' ? true : false
   };
 }
 

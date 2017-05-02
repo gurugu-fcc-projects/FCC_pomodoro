@@ -14,7 +14,11 @@ import {
 describe('startStopTimer', () => {
   it('sets timer state as running', () => {
     const actionObject = {type: START_STOP_TIMER, payload: true};
-    expect(startStopTimer(true)).toEqual(actionObject);
+    expect(startStopTimer('start')).toEqual(actionObject);
+  });
+  it('sets timer state as stopped', () => {
+    const actionObject = {type: START_STOP_TIMER, payload: false};
+    expect(startStopTimer('stop')).toEqual(actionObject);
   });
 });
 

@@ -9,6 +9,8 @@ let timer;
 
 class PomodoroButtons extends Component {
   render() {
+    let { isRunning } = this.props;
+    /* timer countdown inner function */
     const countdown = () => {
       if (this.props.runningTime <= 0) {
         window.clearInterval(timer);
@@ -16,9 +18,15 @@ class PomodoroButtons extends Component {
         this.props.runTimer(this.props.runningTime);
       }
     }
-
-    const startTimer = () => {
-      timer = window.setInterval(countdown, 1000);
+    /* start timer */
+    const startStopTimer = () => {
+      if (isRunning) {
+        this.props.startStopTimer('stop');
+        window.clearInterval(timer);
+      } else {
+        this.props.startStopTimer('start');
+        timer = window.setInterval(countdown, 1000);
+      }
     }
 
     const nextTimer = () => {
@@ -38,7 +46,7 @@ class PomodoroButtons extends Component {
 
     return (
       <div className="buttons">
-        <button onClick={startTimer}>START</button>
+        <button onClick={startStopTimer}>{isRunning ? 'STOP' : 'START'}</button>
         <button onClick={nextTimer}>NEXT</button>
         <button>RESET</button>
       </div>
@@ -51,6 +59,8 @@ PomodoroButtons.propTypes = {
   breakLength: PropTypes.number,
   runningTime: PropTypes.number,
   currentTimer: PropTypes.string,
+  isRunning: PropTypes.bool,
+  startStopTimer: PropTypes.func,
   runTimer: PropTypes.func,
   changeTimer: PropTypes.func
 }
@@ -60,7 +70,8 @@ const mapStateToProps = (state) => {
     sessionLength: state.data.sessionLength,
     breakLength: state.data.breakLength,
     runningTime: state.data.runningTime,
-    currentTimer: state.data.currentTimer
+    currentTimer: state.data.currentTimer,
+    isRunning: state.data.isRunning
   };
 }
 
