@@ -5,35 +5,35 @@ import * as actions from '../actions';
 
 import '../../style/pomodoro_buttons.css';
 
+let timer;
+
 class PomodoroButtons extends Component {
   render() {
+    const countdown = () => {
+      if (this.props.runningTime <= 0) {
+        window.clearInterval(timer);
+      } else {
+        this.props.updateTime(this.props.runningTime);
+      }
+    }
+
     const startTimer = () => {
-      //== clear previous interval
-      window.clearInterval(timeInterval);
-      // console.log('timeInterval', timeInterval);
-      // if (timeInterval) {
-      //   console.log('clearing previous');
-      //   window.clearInterval(timeInterval);
-      // }
-      const timeInterval = window.setInterval(() => {
-        if (this.props.runningTime <= 0) {
-          window.clearInterval(timeInterval);
-        } else {
-          this.props.updateTime(this.props.runningTime);
-        }
-      }, 1000);
+      timer = window.setInterval(countdown, 1000);
     }
 
     const nextTimer = () => {
+      window.clearInterval(timer);
+
+
       //=== switch to the next timer
-      this.props.currentTimer === 'session'
-        ? this.props.changeTimer('break')
-        : this.props.changeTimer('session');
+      // this.props.currentTimer === 'session'
+      //   ? this.props.changeTimer('break')
+      //   : this.props.changeTimer('session');
       //=== change runningTime
-      this.props.currentTimer === 'session'
-        ? this.props.changeRunningTime(this.props.breakTime)
-        : this.props.changeRunningTime(this.props.sessionTime);
-      startTimer();
+      // this.props.currentTimer === 'session'
+      //   ? this.props.changeRunningTime(this.props.breakLength)
+      //   : this.props.changeRunningTime(this.props.sessionLength);
+      // startTimer();
     }
 
     return (
@@ -47,8 +47,8 @@ class PomodoroButtons extends Component {
 }
 
 PomodoroButtons.propTypes = {
-  sessionTime: PropTypes.number,
-  breakTime: PropTypes.number,
+  sessionLength: PropTypes.number,
+  breakLength: PropTypes.number,
   runningTime: PropTypes.number,
   currentTimer: PropTypes.string,
   updateTime: PropTypes.func,
@@ -57,8 +57,8 @@ PomodoroButtons.propTypes = {
 
 const mapStateToProps = (state) => {
   return {
-    sessionTime: state.data.sessionTime,
-    breakTime: state.data.breakTime,
+    sessionLength: state.data.sessionLength,
+    breakLength: state.data.breakLength,
     runningTime: state.data.runningTime,
     currentTimer: state.data.currentTimer
   };

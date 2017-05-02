@@ -6,17 +6,17 @@ import '../../style/pomodoro_preview.css';
 
 class PomodoroPreview extends Component {
   render() {
-    const { sessionTime, breakTime } = this.props;
+    const { sessionLength, breakLength } = this.props;
 
     return (
       <div className="preview">
         <div className="preview-session">
           <h3>SESSION</h3>
-          <div>{sessionTime}</div>
+          <div>{sessionLength}</div>
         </div>
         <div className="preview-break">
           <h3>BREAK</h3>
-          <div>{breakTime}</div>
+          <div>{breakLength}</div>
         </div>
       </div>
     );
@@ -24,14 +24,14 @@ class PomodoroPreview extends Component {
 }
 
 PomodoroPreview.propTypes = {
-  sessionTime: PropTypes.number,
-  breakTime: PropTypes.number
+  sessionLength: PropTypes.number,
+  breakLength: PropTypes.number
 }
 
 const mapStateToProps = (state) => {
   return {
-    sessionTime: state.data.sessionTime,
-    breakTime: state.data.breakTime
+    sessionLength: state.data.sessionLength,
+    breakLength: state.data.breakLength
   };
 };
 

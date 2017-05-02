@@ -5,10 +5,10 @@ import {
 } from '../actions/types';
 
 const INIT_STATE = {
-  sessionTime: 25,
-  breakTime: 5,
+  sessionLength: 10,
+  breakLength: 5,
   currentTimer: 'session',
-  runningTime: 25
+  runningTime: 10
 }
 
 export default function (state = INIT_STATE, action) {
