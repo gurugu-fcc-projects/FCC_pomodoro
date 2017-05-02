@@ -19,10 +19,13 @@ export const runTimer = (runningTime) => {
   };
 }
 
-export const changeTimer = (newTimer) => {
+export const changeTimer = (currentTimer, sessionLength, breakLength) => {
   return {
     type: CHANGE_TIMER,
-    payload: newTimer
+    payload: {
+      timer: currentTimer === 'session' ? 'break' : 'session',
+      runningTime: currentTimer === 'session' ? breakLength : sessionLength
+    }
   };
 }
 

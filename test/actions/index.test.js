@@ -30,13 +30,19 @@ describe('runTimer', () => {
 });
 
 describe('changeTimer', () => {
-  it('passes new timer - break', () => {
-    const actionObject = {type: CHANGE_TIMER, payload: 'break'};
-    expect(changeTimer('break')).toEqual(actionObject);
+  it('switches from session to break timer', () => {
+    const actionObject = {type: CHANGE_TIMER, payload: {
+      timer: 'break',
+      runningTime: 5
+    }};
+    expect(changeTimer('session', 25, 5)).toEqual(actionObject);
   });
-  it('passes new timer - session', () => {
-    const actionObject = {type: CHANGE_TIMER, payload: 'session'};
-    expect(changeTimer('session')).toEqual(actionObject);
+  it('switches from break to session timer', () => {
+    const actionObject = {type: CHANGE_TIMER, payload: {
+      timer: 'session',
+      runningTime: 25
+    }};
+    expect(changeTimer('break', 25, 5)).toEqual(actionObject);
   });
 });
 

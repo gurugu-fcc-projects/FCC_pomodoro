@@ -28,7 +28,8 @@ export default function (state = INIT_STATE, action) {
     case CHANGE_TIMER:
       return {
         ...state,
-        currentTimer: action.payload
+        currentTimer: action.payload.timer,
+        runningTime: action.payload.runningTime
       };
     case CHANGE_RUNTIME:
       return {

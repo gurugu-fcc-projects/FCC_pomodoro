@@ -9,44 +9,45 @@ let timer;
 
 class PomodoroButtons extends Component {
   render() {
-    let { isRunning } = this.props;
-    /* timer countdown inner function */
+    let {
+      sessionLength,
+      breakLength,
+      currentTimer,
+      isRunning,
+    } = this.props;
+    /* helper = runningTime countdown */
     const countdown = () => {
-      if (this.props.runningTime <= 0) {
-        window.clearInterval(timer);
-      } else {
-        this.props.runTimer(this.props.runningTime);
-      }
+      this.props.runningTime <= 0
+        ? window.clearInterval(timer)
+        : this.props.runTimer(this.props.runningTime);
     }
-    /* start timer */
-    const startStopTimer = () => {
-      if (isRunning) {
-        this.props.startStopTimer('stop');
-        window.clearInterval(timer);
-      } else {
-        this.props.startStopTimer('start');
-        timer = window.setInterval(countdown, 1000);
-      }
+    /* helper = start timer */
+    const startTimer = () => {
+      this.props.startStopTimer('start');
+      timer = window.setInterval(countdown, 1000);
     }
-
-    const nextTimer = () => {
+    /* helper = stop timer */
+    const stopTimer = () => {
+      this.props.startStopTimer('stop');
       window.clearInterval(timer);
-
-
-      //=== switch to the next timer
-      // this.props.currentTimer === 'session'
-      //   ? this.props.changeTimer('break')
-      //   : this.props.changeTimer('session');
-      //=== change runningTime
-      // this.props.currentTimer === 'session'
-      //   ? this.props.changeRunningTime(this.props.breakLength)
-      //   : this.props.changeRunningTime(this.props.sessionLength);
-      // startTimer();
     }
+    /* switch to the next timer */
+    const nextTimer = () => {
+      stopTimer();
+      this.props.changeTimer(currentTimer, sessionLength, breakLength);
+      startTimer();
+    }
+    /* start-stop button */
+    const toggleTimer = () => {
+      isRunning
+        ? stopTimer()
+        : startTimer();
+    }
+
 
     return (
       <div className="buttons">
-        <button onClick={startStopTimer}>{isRunning ? 'STOP' : 'START'}</button>
+        <button onClick={toggleTimer}>{isRunning ? 'STOP' : 'START'}</button>
         <button onClick={nextTimer}>NEXT</button>
         <button>RESET</button>
       </div>
@@ -58,8 +59,8 @@ PomodoroButtons.propTypes = {
   sessionLength: PropTypes.number,
   breakLength: PropTypes.number,
   runningTime: PropTypes.number,
-  currentTimer: PropTypes.string,
   isRunning: PropTypes.bool,
+  currentTimer: PropTypes.string,
   startStopTimer: PropTypes.func,
   runTimer: PropTypes.func,
   changeTimer: PropTypes.func
