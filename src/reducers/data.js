@@ -2,16 +2,17 @@ import {
   START_STOP_TIMER,
   RUN_TIMER,
   CHANGE_TIMER,
-  CHANGE_RUNTIME
+  CHANGE_RUNTIME,
+  RESET_ALL
 } from '../actions/types';
 
 const INIT_STATE = {
   sessionLength: 10,
   breakLength: 5,
-  currentTimer: 'session',
   runningTime: 10,
-  isRunning: false
-}
+  isRunning: false,
+  currentTimer: 'session'
+};
 
 export default function (state = INIT_STATE, action) {
   switch(action.type) {
@@ -36,7 +37,14 @@ export default function (state = INIT_STATE, action) {
         ...state,
         runningTime: action.payload
       };
+    case RESET_ALL:
+      return {
+        ...state,
+        runningTime: state.sessionLength,
+        isRunning: false,
+        currentTimer: 'session'
+      };
     default:
       return state;
   }
-}
+};

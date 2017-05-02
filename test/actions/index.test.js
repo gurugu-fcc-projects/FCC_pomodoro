@@ -2,13 +2,16 @@ import {
   START_STOP_TIMER,
   RUN_TIMER,
   CHANGE_TIMER,
-  CHANGE_RUNTIME
+  CHANGE_RUNTIME,
+  RESET_ALL
 } from '../../src/actions/types';
+
 import {
   startStopTimer,
   runTimer,
   changeTimer,
-  changeRunningTime
+  changeRunningTime,
+  resetAll
 } from '../../src/actions/index';
 
 describe('startStopTimer', () => {
@@ -56,3 +59,10 @@ describe('changeRunningTime', () => {
     expect(changeRunningTime(25)).toEqual(actionObject);
   });
 })
+
+describe('resetAll', () => {
+  it('resets to initial state', () => {
+    const actionObject = {type: RESET_ALL};
+    expect(resetAll()).toEqual(actionObject);
+  });
+});

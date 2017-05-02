@@ -31,25 +31,29 @@ class PomodoroButtons extends Component {
       this.props.startStopTimer('stop');
       window.clearInterval(timer);
     }
-    /* switch to the next timer */
-    const nextTimer = () => {
-      stopTimer();
-      this.props.changeTimer(currentTimer, sessionLength, breakLength);
-      startTimer();
-    }
-    /* start-stop button */
+    /* button - start-stop */
     const toggleTimer = () => {
       isRunning
         ? stopTimer()
         : startTimer();
     }
-
+    /* button - next */
+    const nextTimer = () => {
+      stopTimer();
+      this.props.changeTimer(currentTimer, sessionLength, breakLength);
+      startTimer();
+    }
+    /* button - reset */
+    const resetAll = () => {
+      stopTimer();
+      this.props.resetAll();
+    }
 
     return (
       <div className="buttons">
         <button onClick={toggleTimer}>{isRunning ? 'STOP' : 'START'}</button>
         <button onClick={nextTimer}>NEXT</button>
-        <button>RESET</button>
+        <button onClick={resetAll}>RESET</button>
       </div>
     );
   }
@@ -63,7 +67,8 @@ PomodoroButtons.propTypes = {
   currentTimer: PropTypes.string,
   startStopTimer: PropTypes.func,
   runTimer: PropTypes.func,
-  changeTimer: PropTypes.func
+  changeTimer: PropTypes.func,
+  resetAll: PropTypes.func
 }
 
 const mapStateToProps = (state) => {

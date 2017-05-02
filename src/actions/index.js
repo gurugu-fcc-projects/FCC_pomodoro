@@ -2,7 +2,8 @@ import {
   START_STOP_TIMER,
   RUN_TIMER,
   CHANGE_TIMER,
-  CHANGE_RUNTIME
+  CHANGE_RUNTIME,
+  RESET_ALL
 } from './types';
 
 export const startStopTimer = (runState) => {
@@ -33,5 +34,11 @@ export const changeRunningTime = (newRunningTime) => {
   return {
     type: CHANGE_RUNTIME,
     payload: newRunningTime
+  };
+}
+
+export const resetAll = () => {
+  return {
+    type: RESET_ALL
   };
 }
