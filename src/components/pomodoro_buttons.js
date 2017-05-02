@@ -13,7 +13,7 @@ class PomodoroButtons extends Component {
       if (this.props.runningTime <= 0) {
         window.clearInterval(timer);
       } else {
-        this.props.updateTime(this.props.runningTime);
+        this.props.runTimer(this.props.runningTime);
       }
     }
 
@@ -51,7 +51,7 @@ PomodoroButtons.propTypes = {
   breakLength: PropTypes.number,
   runningTime: PropTypes.number,
   currentTimer: PropTypes.string,
-  updateTime: PropTypes.func,
+  runTimer: PropTypes.func,
   changeTimer: PropTypes.func
 }
 

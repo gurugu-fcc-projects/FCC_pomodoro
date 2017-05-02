@@ -1,4 +1,5 @@
 import {
+  START_STOP_TIMER,
   RUN_TIMER,
   CHANGE_TIMER,
   CHANGE_RUNTIME
@@ -8,11 +9,17 @@ const INIT_STATE = {
   sessionLength: 10,
   breakLength: 5,
   currentTimer: 'session',
-  runningTime: 10
+  runningTime: 10,
+  isRunning: false
 }
 
 export default function (state = INIT_STATE, action) {
   switch(action.type) {
+    case START_STOP_TIMER:
+      return {
+        ...state,
+        isRunning: action.payload
+      };
     case RUN_TIMER:
       return {
         ...state,

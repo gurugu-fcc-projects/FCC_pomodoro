@@ -1,18 +1,27 @@
 import {
+  START_STOP_TIMER,
   RUN_TIMER,
   CHANGE_TIMER,
   CHANGE_RUNTIME
 } from '../../src/actions/types';
 import {
-  updateTime,
+  startStopTimer,
+  runTimer,
   changeTimer,
   changeRunningTime
 } from '../../src/actions/index';
 
-describe('updateTime', () => {
+describe('startStopTimer', () => {
+  it('sets timer state as running', () => {
+    const actionObject = {type: START_STOP_TIMER, payload: true};
+    expect(startStopTimer(true)).toEqual(actionObject);
+  });
+});
+
+describe('runTimer', () => {
   it('returns a number minus one', () => {
     const actionObject = {type: RUN_TIMER, payload: 9};
-    expect(updateTime(10)).toEqual(actionObject);
+    expect(runTimer(10)).toEqual(actionObject);
   });
 });
 

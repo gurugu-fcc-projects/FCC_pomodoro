@@ -1,10 +1,18 @@
 import {
+  START_STOP_TIMER,
   RUN_TIMER,
   CHANGE_TIMER,
   CHANGE_RUNTIME
 } from './types';
 
-export const updateTime = (runningTime) => {
+export const startStopTimer = (runState) => {
+  return {
+    type: START_STOP_TIMER,
+    payload: runState
+  };
+}
+
+export const runTimer = (runningTime) => {
   return {
     type: RUN_TIMER,
     payload: runningTime - 1
