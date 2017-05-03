@@ -49,11 +49,16 @@ class PomodoroButtons extends Component {
       this.props.resetAll();
     }
 
+    const showSettings = () => {
+      document.querySelector('.modal').style.display = 'block';
+    }
+
     return (
       <div className="buttons">
         <button onClick={toggleTimer}>{isRunning ? 'STOP' : 'START'}</button>
         <button onClick={nextTimer}>NEXT</button>
         <button onClick={resetAll}>RESET</button>
+        <button onClick={showSettings}>SETTINGS</button>
       </div>
     );
   }
