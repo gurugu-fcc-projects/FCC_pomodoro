@@ -1,0 +1,8 @@
+body {
+  background-color: hsla(12, 95%, 45%, 0.7);
+  margin: 0;
+}
+
+.pomodoro {
+  color: hsla(360, 100%, 100%, 1);
+}

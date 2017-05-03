@@ -5,6 +5,8 @@ import PomodoroTimer from './pomodoro_timer';
 import PomodoroButtons from './pomodoro_buttons';
 import PomodoroSettings from './pomodoro_settings';
 
+import '../../style/global.css';
+
 export default class App extends Component {
   render() {
     return (
