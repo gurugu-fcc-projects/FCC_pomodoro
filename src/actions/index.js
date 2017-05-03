@@ -2,6 +2,7 @@ import {
   START_STOP_TIMER,
   RUN_TIMER,
   CHANGE_TIMER,
+  CHANGE_TIMER_LENGTH,
   CHANGE_RUNTIME,
   RESET_ALL
 } from './types';
@@ -26,6 +27,17 @@ export const changeTimer = (currentTimer, sessionLength, breakLength) => {
     payload: {
       timer: currentTimer === 'session' ? 'break' : 'session',
       runningTime: currentTimer === 'session' ? breakLength : sessionLength
+    }
+  };
+}
+
+export const changeTimerLength = (timer, newValue, isCurrentTimer) => {
+  return {
+    type: CHANGE_TIMER_LENGTH,
+    payload: {
+      length: timer === 'session' ? 'sessionLength' : 'breakLength', 
+      newValue: newValue,
+      isCurrentTimer: isCurrentTimer
     }
   };
 }

@@ -1,10 +1,10 @@
 ## TODO list
 
-- [minimum functionality]
-  - [change session length]
-  - [change break length]
-- [additional functionality]
-  - [to be added]
+- minimum functionality
+  - change session length
+  - change break length
+- additional functionality
+  - to be added
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 

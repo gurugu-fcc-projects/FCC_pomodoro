@@ -15,21 +15,21 @@ class PomodoroButtons extends Component {
       currentTimer,
       isRunning,
     } = this.props;
+    /* helper = stop timer */
+    const stopTimer = () => {
+      this.props.startStopTimer('stop');
+      window.clearInterval(timer);
+    }
     /* helper = runningTime countdown */
     const countdown = () => {
       this.props.runningTime <= 0
-        ? window.clearInterval(timer)
+        ? stopTimer()
         : this.props.runTimer(this.props.runningTime);
     }
     /* helper = start timer */
     const startTimer = () => {
       this.props.startStopTimer('start');
       timer = window.setInterval(countdown, 1000);
-    }
-    /* helper = stop timer */
-    const stopTimer = () => {
-      this.props.startStopTimer('stop');
-      window.clearInterval(timer);
     }
     /* button - start-stop */
     const toggleTimer = () => {

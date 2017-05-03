@@ -2,6 +2,7 @@ import {
   START_STOP_TIMER,
   RUN_TIMER,
   CHANGE_TIMER,
+  CHANGE_TIMER_LENGTH,
   CHANGE_RUNTIME,
   RESET_ALL
 } from '../../src/actions/types';
@@ -10,6 +11,7 @@ import {
   startStopTimer,
   runTimer,
   changeTimer,
+  changeTimerLength,
   changeRunningTime,
   resetAll
 } from '../../src/actions/index';
@@ -46,6 +48,41 @@ describe('changeTimer', () => {
       runningTime: 25
     }};
     expect(changeTimer('break', 25, 5)).toEqual(actionObject);
+  });
+});
+
+describe('changeTimerLength', () => {
+  it('changes session length with current session timer', () => {
+    const actionObject = {type: CHANGE_TIMER_LENGTH, payload: {
+      length: 'sessionLength',
+      newValue: 25,
+      isCurrentTimer: true
+    }};
+    expect(changeTimerLength('session', 25, true)).toEqual(actionObject);
+  });
+  it('changes session length with current break timer', () => {
+    const actionObject = {type: CHANGE_TIMER_LENGTH, payload: {
+      length: 'sessionLength',
+      newValue: 25,
+      isCurrentTimer: false
+    }};
+    expect(changeTimerLength('session', 25, false)).toEqual(actionObject);
+  });
+  it('changes break length with current break timer', () => {
+    const actionObject = {type: CHANGE_TIMER_LENGTH, payload: {
+      length: 'breakLength',
+      newValue: 25,
+      isCurrentTimer: true
+    }};
+    expect(changeTimerLength('break', 25, true)).toEqual(actionObject);
+  });
+  it('changes break length with current break timer', () => {
+    const actionObject = {type: CHANGE_TIMER_LENGTH, payload: {
+      length: 'breakLength',
+      newValue: 25,
+      isCurrentTimer: false
+    }};
+    expect(changeTimerLength('break', 25, false)).toEqual(actionObject);
   });
 });
 

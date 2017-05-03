@@ -2,6 +2,7 @@ import {
   START_STOP_TIMER,
   RUN_TIMER,
   CHANGE_TIMER,
+  CHANGE_TIMER_LENGTH,
   CHANGE_RUNTIME,
   RESET_ALL
 } from '../actions/types';
@@ -32,6 +33,12 @@ export default function (state = INIT_STATE, action) {
         currentTimer: action.payload.timer,
         runningTime: action.payload.runningTime
       };
+    case CHANGE_TIMER_LENGTH:
+      const { length, newValue, isCurrentTimer } = action.payload;
+
+      return isCurrentTimer
+        ? { ...state, [length]: newValue, runningTime: newValue}
+        : { ...state, [length]: newValue}
     case CHANGE_RUNTIME:
       return {
         ...state,
