@@ -6,10 +6,11 @@ import '../../style/pomodoro_timer.css';
 
 class PomodoroTimer extends Component {
   render() {
-    const { runningTime } = this.props;
+    const { runningTime, currentTimer } = this.props;
 
     return (
       <div className="timer">
+        <h3>{currentTimer}</h3>
         {runningTime}
       </div>
     );
@@ -17,12 +18,14 @@ class PomodoroTimer extends Component {
 }
 
 PomodoroTimer.propTypes = {
-  runningTime: PropTypes.number
+  runningTime: PropTypes.number,
+  currentTimer: PropTypes.string
 }
 
 const mapStateToProps = (state) => {
   return {
-    runningTime: state.data.runningTime
+    runningTime: state.data.runningTime,
+    currentTimer: state.data.currentTimer
   };
 }
 
