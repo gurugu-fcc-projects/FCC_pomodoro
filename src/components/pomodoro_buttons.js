@@ -69,7 +69,7 @@ class PomodoroButtons extends Component {
         <button onClick={toggleTimer}>{isRunning ? 'STOP' : 'START'}</button>
         <button onClick={nextTimer}>NEXT</button>
         <button onClick={resetAll}>RESET</button>
-        <button onClick={showSettings}>SETTINGS</button>
+        <div className="button-settings" onClick={showSettings}><i className="fa fa-cog"></i></div>
       </div>
     );
   }

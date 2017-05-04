@@ -3,8 +3,22 @@
   padding: 20px;
 }
 
-
 .buttons button {
   padding: 10px;
   margin: 10px;
+}
+
+.button-settings {
+  position: absolute;
+  top: 0; right: 0;
+  margin: 20px;
+  font-size: 2.5em;
+  cursor: pointer;
+  transition: color .3s;
+}
+.button-settings:hover {
+  color: hsla(16, 95%, 35%, 1);
+}
+.button-settings:active {
+  color: hsla(16, 95%, 15%, 1);
 }

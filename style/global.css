@@ -10,4 +10,5 @@ button {
 
 .pomodoro {
   color: hsla(360, 100%, 100%, 1);
+  height: 100vh;
 }
