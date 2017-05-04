@@ -22,9 +22,24 @@
   z-index: 2;
   transform: translateX(600px);
   background-color: hsla(200, 40%, 40%, 1);
+  background-color: #F9C997;
   height: 100%; width: 600px;
   transition: all .4s;
 }
 .settings-show {
   transform: translateX(0);
+}
+/* Saved timers list */
+.saved-timers {
+  display: flex;
+  flex-wrap: wrap;
+}
+.saved-timers > div {
+  background-color: hsla(200, 40%, 40%, 1);
+  padding: 5px;
+  border-radius: 10px;
+  margin: 10px 0 0 10px;
+  width: 50px;
+  text-align: center;
+  cursor: pointer;
 }

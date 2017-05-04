@@ -25,6 +25,11 @@ class PomodoroSettings extends Component {
   }
   render() {
     const { savedTimers } = this.props;
+    const savedTimersList = savedTimers.map((timers, index) => {
+      return (
+        <div key={index}>{timers.session}-{timers.break}</div>
+      );
+    });
 
     return (
       <div>
@@ -32,7 +37,7 @@ class PomodoroSettings extends Component {
         </div>
         <div className="settings">
           <div className="saved-timers">
-            <div></div>
+            {savedTimersList}
           </div>
         </div>
       </div>
