@@ -12,7 +12,21 @@ const INIT_STATE = {
   breakLength: 5,
   runningTime: 10,
   isRunning: false,
-  currentTimer: 'session'
+  currentTimer: 'session',
+  savedTimers: [
+    {
+      session: 25,
+      break: 5
+    },
+    {
+      session: 30,
+      break: 5
+    },
+    {
+      session: 45,
+      break: 10
+    }
+  ]
 };
 
 export default function (state = INIT_STATE, action) {

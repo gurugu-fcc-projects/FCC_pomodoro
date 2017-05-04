@@ -52,9 +52,7 @@ class PomodoroButtons extends Component {
     const showSettings = () => {
       const settingsElement = document.querySelector('.settings'),
             modalElement = document.querySelector('.modal');
-      // document.querySelector('.modal').style.display = 'block';
-      // document.querySelector('.modal').classList.remove('modal-hide');
-      // document.querySelector('.modal').classList.add('modal-show');
+            
       if (settingsElement.classList.contains('settings-show')) {
         settingsElement.classList.remove('settings-show');
         modalElement.classList.remove('modal-show');
