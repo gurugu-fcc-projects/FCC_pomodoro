@@ -50,7 +50,18 @@ class PomodoroButtons extends Component {
     }
 
     const showSettings = () => {
-      document.querySelector('.modal').style.display = 'block';
+      const settingsElement = document.querySelector('.settings'),
+            modalElement = document.querySelector('.modal');
+      // document.querySelector('.modal').style.display = 'block';
+      // document.querySelector('.modal').classList.remove('modal-hide');
+      // document.querySelector('.modal').classList.add('modal-show');
+      if (settingsElement.classList.contains('settings-show')) {
+        settingsElement.classList.remove('settings-show');
+        modalElement.classList.remove('modal-show');
+      } else {
+        settingsElement.classList.add('settings-show');
+        modalElement.classList.add('modal-show');
+      }
     }
 
     return (

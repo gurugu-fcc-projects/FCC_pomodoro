@@ -4,6 +4,10 @@ body {
   margin: 0;
 }
 
+button {
+  cursor: pointer;
+}
+
 .pomodoro {
   color: hsla(360, 100%, 100%, 1);
 }
