@@ -4,7 +4,8 @@ import {
   CHANGE_TIMER,
   CHANGE_TIMER_LENGTH,
   CHANGE_RUNTIME,
-  RESET_ALL
+  RESET_ALL,
+  CHOOSE_TIMER
 } from '../../src/actions/types';
 
 import {
@@ -13,7 +14,8 @@ import {
   changeTimer,
   changeTimerLength,
   changeRunningTime,
-  resetAll
+  resetAll,
+  chooseTimer
 } from '../../src/actions/index';
 
 describe('startStopTimer', () => {
@@ -101,5 +103,12 @@ describe('resetAll', () => {
   it('resets to initial state', () => {
     const actionObject = {type: RESET_ALL};
     expect(resetAll()).toEqual(actionObject);
+  });
+});
+
+describe('chooseTimer', () => {
+  it('chooses new timer', () => {
+    const actionObject = {type: CHOOSE_TIMER, payload: {session: 25, break: 5}};
+    expect(chooseTimer(25, 5)).toEqual(actionObject);
   });
 });
