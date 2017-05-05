@@ -1,4 +1,7 @@
-/* Modal (background) */
+/*======================
+ Modal (background)
+======================*/
+
 .modal {
   opacity: 0;
   position: fixed;
@@ -14,7 +17,11 @@
   opacity: 1;
   z-index: 1;
 }
-/* Modal (content) */
+
+/*======================
+ Modal (content)
+======================*/
+
 .settings {
   position: fixed;
   right: -400px;
@@ -29,7 +36,11 @@
 .settings-show {
   transform: translateX(0);
 }
-/* Saved timers list */
+
+/*======================
+ Saved timers list
+======================*/
+
 .saved-timers {
   display: flex;
   flex-wrap: wrap;
@@ -37,8 +48,6 @@
 .saved-timer {
   display: flex;
   justify-content: space-between;
-  background-color: hsla(200, 40%, 40%, 1);
-  padding: 5px;
   margin: 10px 0 0 10px;
   box-shadow: 2px 2px 3px #3f3f3f;
   cursor: pointer;
@@ -48,9 +57,31 @@
   box-shadow: 4px 4px 4px #3f3f3f;
 }
 .saved-timer:active {
-  background-color: hsla(200, 55%, 50%, 1);
   box-shadow: 4px 4px 4px #3f3f3f;
 }
+.saved-timer-values {
+  background-color: hsla(200, 40%, 40%, 1);
+  padding: 8px;
+  transition: background-color 0.2s;
+}
+.saved-timer-values:active {
+  background-color: hsla(200, 55%, 50%, 1);
+}
+.saved-timer-values:active + .saved-timer-close {
+  background-color: hsla(200, 55%, 50%, 1);
+}
 .saved-timer-close {
-  margin-left: 10px;
+  background-color: hsla(200, 40%, 40%, 1);
+  padding: 8px 8px 8px 10px;
+  transition: background-color 0.2s;
+}
+.saved-timer-close i {
+  color: hsla(200, 100%, 100%, 0.4);
+  transition: color 0.2s;
+}
+.saved-timer-close:hover > i {
+  color: hsla(200, 100%, 100%, 0.8);
+}
+.saved-timer-close:active > i {
+  color: hsla(200, 100%, 100%, 1);
 }

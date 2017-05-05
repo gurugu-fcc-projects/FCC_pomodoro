@@ -21,9 +21,10 @@ class PomodoroSettings extends Component {
       return (
         <div
           key={index}
-          onClick={() => this.props.chooseTimer(timers.session, timers.break)}
           className="saved-timer">
-          <span className="saved-timer-values">
+          <span 
+            className="saved-timer-values"
+            onClick={() => this.props.chooseTimer(timers.session, timers.break)}>
             {timers.session}-{timers.break}
           </span>
           <span className="saved-timer-close">
