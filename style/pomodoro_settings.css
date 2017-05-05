@@ -34,21 +34,23 @@
   display: flex;
   flex-wrap: wrap;
 }
-.saved-timers > div {
+.saved-timer {
+  display: flex;
+  justify-content: space-between;
   background-color: hsla(200, 40%, 40%, 1);
   padding: 5px;
-  border-radius: 10px;
   margin: 10px 0 0 10px;
   box-shadow: 2px 2px 3px #3f3f3f;
-  width: 50px;
-  text-align: center;
   cursor: pointer;
   transition: box-shadow 0.2s, background-color 0.2s;
 }
-.saved-timers > div:hover {
+.saved-timer:hover {
   box-shadow: 4px 4px 4px #3f3f3f;
 }
-.saved-timers > div:active {
+.saved-timer:active {
   background-color: hsla(200, 55%, 50%, 1);
   box-shadow: 4px 4px 4px #3f3f3f;
+}
+.saved-timer-close {
+  margin-left: 10px;
 }
