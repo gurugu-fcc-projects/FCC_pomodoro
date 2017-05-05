@@ -38,6 +38,20 @@
 }
 
 /*======================
+ Setting timers
+======================*/
+
+.set-timers {
+  color: #000;
+}
+
+.set-timers button {
+  background-color: hsla(200, 40%, 40%, 1);
+  color: #fff;
+  width: 20px; height: 20px;
+  border: none;
+}
+/*======================
  Saved timers list
 ======================*/
 
@@ -61,6 +75,7 @@
 }
 .saved-timer.selected {
   box-shadow: 0 0 0 #3f3f3f;
+  background-color: hsla(200, 40%, 35%, 1);
 }
 .saved-timer:active {
   /*box-shadow: 4px 4px 4px #3f3f3f;*/

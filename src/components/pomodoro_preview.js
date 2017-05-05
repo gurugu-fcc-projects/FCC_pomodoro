@@ -14,7 +14,7 @@ class PomodoroPreview extends Component {
       currentTimer
     } = this.props;
 
-    /* button - increase */
+    /* button - increase-decrease */
     const increaseDecrease = (timer, newValue) => {
       const isCurrentTimer = timer === currentTimer;
       return isRunning

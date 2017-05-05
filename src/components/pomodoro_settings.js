@@ -16,7 +16,7 @@ class PomodoroSettings extends Component {
   }
 
   render() {
-    const { savedTimers } = this.props;
+    const { savedTimers, sessionLength, breakLength } = this.props;
 
     const chooseTimer = (event, sessionLength, breakLength) => {
       const timer = event.target.parentNode;
@@ -57,12 +57,33 @@ class PomodoroSettings extends Component {
       );
     });
 
+    /* button - increase-decrease */
+    const increaseDecrease = (timer, newValue) => {
+      // const isCurrentTimer = timer === currentTimer;
+      // return isRunning
+      //   ? false
+      //   : this.props.changeTimerLength(timer, newValue, isCurrentTimer);
+    }
 
     return (
       <div>
         <div className="modal">
         </div>
         <div className="settings">
+          <div className="set-timers">
+            <div className="set-session">
+              <h4>session</h4>
+              <button onClick={() => increaseDecrease('session', sessionLength + 1)}>+</button>
+              <span>{sessionLength}</span>
+              <button onClick={() => increaseDecrease('session', sessionLength - 1)}>-</button>
+            </div>
+            <div className="set-break">
+              <h4>break</h4>
+              <button onClick={() => increaseDecrease('break', breakLength + 1)}>+</button>
+              <span>{breakLength}</span>
+              <button onClick={() => increaseDecrease('break', breakLength - 1)}>-</button>
+            </div>
+          </div>
           <div className="saved-timers">
             {savedTimersList}
           </div>
@@ -73,13 +94,18 @@ class PomodoroSettings extends Component {
 }
 
 PomodoroSettings.propTypes = {
+  sessionLength: PropTypes.number,
+  breakLength: PropTypes.number,
   savedTimers: PropTypes.array,
+  changeTimerLength: PropTypes.func,
   chooseTimer: PropTypes.func,
   updateSetTimers: PropTypes.func
 }
 
 const mapStateToProps = (state) => {
   return {
+    sessionLength: state.data.sessionLength,
+    breakLength: state.data.breakLength,
     savedTimers: state.data.savedTimers
   };
 }
