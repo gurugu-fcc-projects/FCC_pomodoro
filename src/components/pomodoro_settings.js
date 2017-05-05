@@ -3,23 +3,14 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 
-
+import { showHideSettings } from '../utils/common';
 import '../../style/pomodoro_settings.css';
 
 class PomodoroSettings extends Component {
   componentDidMount() {
-    const settingsElement = document.querySelector('.settings'),
-          modalElement = document.querySelector('.modal');
-
     window.addEventListener('click', (event) => {
-      if (event.target === modalElement) {
-        if (settingsElement.classList.contains('settings-show')) {
-          settingsElement.classList.remove('settings-show');
-          modalElement.classList.remove('modal-show');
-        } else {
-          settingsElement.classList.add('settings-show');
-          modalElement.classList.add('modal-show');
-        }
+      if (event.target === document.querySelector('.modal')) {
+        showHideSettings();
       }
     });
   }

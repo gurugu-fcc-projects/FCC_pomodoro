@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 
+import { showHideSettings } from '../utils/common';
 import '../../style/pomodoro_buttons.css';
 
 let timer;
@@ -48,25 +49,12 @@ class PomodoroButtons extends Component {
       this.props.resetAll();
     }
 
-    const showSettings = () => {
-      const settingsElement = document.querySelector('.settings'),
-            modalElement = document.querySelector('.modal');
-
-      if (settingsElement.classList.contains('settings-show')) {
-        settingsElement.classList.remove('settings-show');
-        modalElement.classList.remove('modal-show');
-      } else {
-        settingsElement.classList.add('settings-show');
-        modalElement.classList.add('modal-show');
-      }
-    }
-
     return (
       <div className="buttons">
         <button onClick={toggleTimer}>{this.props.isRunning ? 'STOP' : 'START'}</button>
         <button onClick={nextTimer}>NEXT</button>
         <button onClick={resetAll}>RESET</button>
-        <div className="button-settings" onClick={showSettings}><i className="fa fa-cog"></i></div>
+        <div className="button-settings" onClick={showHideSettings}><i className="fa fa-cog"></i></div>
       </div>
     );
   }
