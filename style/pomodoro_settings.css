@@ -8,7 +8,7 @@
   overflow: auto;
   background-color: rgb(0, 0, 0);
   background-color: hsla(200, 40%, 10%, 0.4);
-  transition: all .4s;
+  transition: opacity .4s, z-index .4s;
 }
 .modal-show {
   opacity: 1;
@@ -17,14 +17,14 @@
 /* Modal (content) */
 .settings {
   position: fixed;
-  right: -600px;
+  right: -400px;
   top: 0; right: 0;
   z-index: 2;
-  transform: translateX(600px);
+  transform: translateX(400px);
   background-color: hsla(200, 40%, 40%, 1);
   background-color: #F9C997;
-  height: 100%; width: 600px;
-  transition: all .4s;
+  height: 100%; width: 400px;
+  transition: transform .4s;
 }
 .settings-show {
   transform: translateX(0);
@@ -39,7 +39,16 @@
   padding: 5px;
   border-radius: 10px;
   margin: 10px 0 0 10px;
+  box-shadow: 2px 2px 3px #3f3f3f;
   width: 50px;
   text-align: center;
   cursor: pointer;
+  transition: box-shadow 0.2s, background-color 0.2s;
+}
+.saved-timers > div:hover {
+  box-shadow: 4px 4px 4px #3f3f3f;
+}
+.saved-timers > div:active {
+  background-color: hsla(200, 55%, 50%, 1);
+  box-shadow: 4px 4px 4px #3f3f3f;
 }
