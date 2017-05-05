@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import * as actions from '../actions';
 
 
 import '../../style/pomodoro_settings.css';
@@ -21,13 +22,17 @@ class PomodoroSettings extends Component {
         }
       }
     });
-
   }
+
   render() {
     const { savedTimers } = this.props;
     const savedTimersList = savedTimers.map((timers, index) => {
       return (
-        <div key={index}>{timers.session}-{timers.break}</div>
+        <div
+          key={index}
+          onClick={() => this.props.chooseTimer(timers.session, timers.break)}>
+          {timers.session}-{timers.break}
+        </div>
       );
     });
 
@@ -46,7 +51,8 @@ class PomodoroSettings extends Component {
 }
 
 PomodoroSettings.propTypes = {
-  savedTimers: PropTypes.array
+  savedTimers: PropTypes.array,
+  chooseTimer: PropTypes.func
 }
 
 const mapStateToProps = (state) => {
@@ -55,4 +61,4 @@ const mapStateToProps = (state) => {
   };
 }
 
-export default connect(mapStateToProps)(PomodoroSettings);
+export default connect(mapStateToProps, actions)(PomodoroSettings);

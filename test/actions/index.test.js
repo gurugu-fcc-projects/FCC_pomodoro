@@ -108,7 +108,10 @@ describe('resetAll', () => {
 
 describe('chooseTimer', () => {
   it('chooses new timer', () => {
-    const actionObject = {type: CHOOSE_TIMER, payload: {session: 25, break: 5}};
+    const actionObject = {type: CHOOSE_TIMER, payload: {
+      sessionLength: 25,
+      breakLength: 5
+    }};
     expect(chooseTimer(25, 5)).toEqual(actionObject);
   });
 });

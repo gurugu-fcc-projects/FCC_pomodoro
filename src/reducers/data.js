@@ -4,7 +4,8 @@ import {
   CHANGE_TIMER,
   CHANGE_TIMER_LENGTH,
   CHANGE_RUNTIME,
-  RESET_ALL
+  RESET_ALL,
+  CHOOSE_TIMER
 } from '../actions/types';
 
 const INIT_STATE = {
@@ -64,6 +65,14 @@ export default function (state = INIT_STATE, action) {
         runningTime: state.sessionLength,
         isRunning: false,
         currentTimer: 'session'
+      };
+    case CHOOSE_TIMER:
+      return {
+        ...state,
+        sessionLength: action.payload.sessionLength,
+        breakLength: action.payload.breakLength,
+        runningTime: action.payload.sessionLength,
+        isRunning: false
       };
     default:
       return state;

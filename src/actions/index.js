@@ -56,9 +56,9 @@ export const resetAll = () => {
   };
 }
 
-export const chooseTimer = () => {
+export const chooseTimer = (sessionLength, breakLength) => {
   return {
     type: CHOOSE_TIMER,
-    payload: 'choosing timer'
+    payload: { sessionLength, breakLength }
   };
 }

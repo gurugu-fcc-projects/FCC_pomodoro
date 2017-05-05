@@ -12,8 +12,7 @@ class PomodoroButtons extends Component {
     let {
       sessionLength,
       breakLength,
-      currentTimer,
-      isRunning,
+      currentTimer
     } = this.props;
     /* helper = stop timer */
     const stopTimer = () => {
@@ -22,7 +21,7 @@ class PomodoroButtons extends Component {
     }
     /* helper = runningTime countdown */
     const countdown = () => {
-      this.props.runningTime <= 0
+      this.props.runningTime <= 0 || this.props.isRunning === false
         ? stopTimer()
         : this.props.runTimer(this.props.runningTime);
     }
@@ -33,7 +32,7 @@ class PomodoroButtons extends Component {
     }
     /* button - start-stop */
     const toggleTimer = () => {
-      isRunning
+      this.props.isRunning
         ? stopTimer()
         : startTimer();
     }
@@ -52,7 +51,7 @@ class PomodoroButtons extends Component {
     const showSettings = () => {
       const settingsElement = document.querySelector('.settings'),
             modalElement = document.querySelector('.modal');
-            
+
       if (settingsElement.classList.contains('settings-show')) {
         settingsElement.classList.remove('settings-show');
         modalElement.classList.remove('modal-show');
@@ -64,7 +63,7 @@ class PomodoroButtons extends Component {
 
     return (
       <div className="buttons">
-        <button onClick={toggleTimer}>{isRunning ? 'STOP' : 'START'}</button>
+        <button onClick={toggleTimer}>{this.props.isRunning ? 'STOP' : 'START'}</button>
         <button onClick={nextTimer}>NEXT</button>
         <button onClick={resetAll}>RESET</button>
         <div className="button-settings" onClick={showSettings}><i className="fa fa-cog"></i></div>
@@ -91,7 +90,8 @@ const mapStateToProps = (state) => {
     breakLength: state.data.breakLength,
     runningTime: state.data.runningTime,
     currentTimer: state.data.currentTimer,
-    isRunning: state.data.isRunning
+    isRunning: state.data.isRunning,
+    tmp: state.data.tmp
   };
 }
 
