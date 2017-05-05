@@ -17,22 +17,33 @@ class PomodoroSettings extends Component {
 
   render() {
     const { savedTimers } = this.props;
-    const savedTimersList = savedTimers.map((timers, index) => {
+
+    const deleteTimer = (id) => {
+      const newTimers = this.props.savedTimers.filter((timer) => {
+        return timer.id !== id;
+      });
+      this.props.updateSetTimers(newTimers);
+    }
+
+    const savedTimersList = savedTimers.map((timer) => {
       return (
         <div
-          key={index}
+          key={timer.id}
           className="saved-timer">
-          <span 
+          <span
             className="saved-timer-values"
-            onClick={() => this.props.chooseTimer(timers.session, timers.break)}>
-            {timers.session}-{timers.break}
+            onClick={() => this.props.chooseTimer(timer.session, timer.break)}>
+            {timer.session}-{timer.break}
           </span>
-          <span className="saved-timer-close">
+          <span
+            className="saved-timer-close"
+            onClick={() => deleteTimer(timer.id)}>
             <i className="fa fa-close"></i>
           </span>
         </div>
       );
     });
+
 
     return (
       <div>
@@ -50,7 +61,8 @@ class PomodoroSettings extends Component {
 
 PomodoroSettings.propTypes = {
   savedTimers: PropTypes.array,
-  chooseTimer: PropTypes.func
+  chooseTimer: PropTypes.func,
+  updateSetTimers: PropTypes.func
 }
 
 const mapStateToProps = (state) => {

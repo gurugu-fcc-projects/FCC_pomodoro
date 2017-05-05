@@ -5,7 +5,8 @@ import {
   CHANGE_TIMER_LENGTH,
   CHANGE_RUNTIME,
   RESET_ALL,
-  CHOOSE_TIMER
+  CHOOSE_TIMER,
+  UPDATE_SET_TIMERS
 } from '../../src/actions/types';
 
 import {
@@ -15,7 +16,8 @@ import {
   changeTimerLength,
   changeRunningTime,
   resetAll,
-  chooseTimer
+  chooseTimer,
+  updateSetTimers
 } from '../../src/actions/index';
 
 describe('startStopTimer', () => {
@@ -113,5 +115,13 @@ describe('chooseTimer', () => {
       breakLength: 5
     }};
     expect(chooseTimer(25, 5)).toEqual(actionObject);
+  });
+});
+
+describe('updateSetTimers', () => {
+  it('changes set timers', () => {
+    const actionObject = {type: UPDATE_SET_TIMERS, payload:
+      [{id: 1, session: 25, break: 5}]};
+    expect(updateSetTimers([{id: 1, session: 25, break: 5}])).toEqual(actionObject);
   });
 });

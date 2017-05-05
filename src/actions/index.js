@@ -5,7 +5,8 @@ import {
   CHANGE_TIMER_LENGTH,
   CHANGE_RUNTIME,
   RESET_ALL,
-  CHOOSE_TIMER
+  CHOOSE_TIMER,
+  UPDATE_SET_TIMERS
 } from './types';
 
 export const startStopTimer = (runState) => {
@@ -60,5 +61,12 @@ export const chooseTimer = (sessionLength, breakLength) => {
   return {
     type: CHOOSE_TIMER,
     payload: { sessionLength, breakLength }
+  };
+}
+
+export const updateSetTimers = (newTimers) => {
+  return {
+    type: UPDATE_SET_TIMERS,
+    payload: newTimers
   };
 }
