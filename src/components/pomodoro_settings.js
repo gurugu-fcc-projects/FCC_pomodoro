@@ -18,8 +18,21 @@ class PomodoroSettings extends Component {
   render() {
     const { savedTimers } = this.props;
 
+    const chooseTimer = (event, sessionLength, breakLength) => {
+      const timer = event.target.parentNode;
+      const allTimers = [...document.querySelectorAll('.saved-timer')];
+
+      if (timer.classList.contains('selected')) {
+        timer.classList.remove('selected');
+      } else {
+        allTimers.forEach((timer) => timer.classList.remove('selected'));
+        timer.classList.add('selected');
+      }
+      this.props.chooseTimer(sessionLength, breakLength);
+    }
+
     const deleteTimer = (id) => {
-      const newTimers = this.props.savedTimers.filter((timer) => {
+      const newTimers = savedTimers.filter((timer) => {
         return timer.id !== id;
       });
       this.props.updateSetTimers(newTimers);
@@ -32,7 +45,7 @@ class PomodoroSettings extends Component {
           className="saved-timer">
           <span
             className="saved-timer-values"
-            onClick={() => this.props.chooseTimer(timer.session, timer.break)}>
+            onClick={(event) => chooseTimer(event, timer.session, timer.break)}>
             {timer.session}-{timer.break}
           </span>
           <span
