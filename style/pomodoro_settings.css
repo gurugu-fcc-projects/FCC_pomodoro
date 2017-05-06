@@ -23,6 +23,8 @@
 ======================*/
 
 .settings {
+  display: flex;
+  flex-direction: column;
   position: fixed;
   right: -400px;
   top: 0; right: 0;
@@ -30,12 +32,16 @@
   transform: translateX(400px);
   background-color: hsla(200, 40%, 40%, 1);
   background-color: #F9C997;
-  background-color: #e0e0e0;
+  background-color: #e4e4e4;
   height: 100%; width: 400px;
   transition: transform .4s;
 }
 .settings-show {
   transform: translateX(0);
+}
+.saved-timers,
+.set-timers {
+  margin: 20px;
 }
 
 /*======================
@@ -43,15 +49,29 @@
 ======================*/
 
 .set-timers {
-  color: #000;
+  color: #606060;
+}
+.set-timer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+}
+.set-timer-title {
+  flex-grow: 3;
+  font-size: 1.5em;
+}
+.set-timer-button i {
+  color: hsla(200, 40%, 35%, 1);
+  font-size: 2.7em;
+}
+.set-timer-value {
+  font-size: 1.5em;
+  text-align: center;
+  padding: 0 15px;
+  width: 40px;
 }
 
-.set-timers button {
-  background-color: hsla(200, 40%, 40%, 1);
-  color: #fff;
-  width: 20px; height: 20px;
-  border: none;
-}
 /*======================
  Saved timers list
 ======================*/
@@ -70,33 +90,17 @@
   transition: box-shadow 0.2s, background-color 0.2s;
 }
 .saved-timer:hover {
-  /*box-shadow: 4px 4px 4px #3f3f3f;*/
   background-color: hsla(200, 40%, 35%, 1);
-  /*box-shadow: 0 0 0 #3f3f3f;*/
 }
 .saved-timer.selected {
   box-shadow: 0 0 0 #3f3f3f;
   background-color: hsla(200, 40%, 35%, 1);
 }
-.saved-timer:active {
-  /*box-shadow: 4px 4px 4px #3f3f3f;*/
-  /*box-shadow: 0 0 0 #3f3f3f;*/
-}
 .saved-timer-values {
-  /*background-color: hsla(200, 40%, 40%, 1);*/
   padding: 8px;
-  /*transition: background-color 0.2s;*/
 }
-/*.saved-timer-values:active {
-  background-color: hsla(200, 55%, 50%, 1);
-}
-.saved-timer-values:active + .saved-timer-close {
-  background-color: hsla(200, 55%, 50%, 1);
-}*/
 .saved-timer-close {
-  /*background-color: hsla(200, 40%, 40%, 1);*/
   padding: 8px 8px 8px 10px;
-  /*transition: background-color 0.2s;*/
 }
 .saved-timer-close i {
   color: hsla(200, 100%, 100%, 0.4);

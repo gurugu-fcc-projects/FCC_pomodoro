@@ -70,22 +70,30 @@ class PomodoroSettings extends Component {
         <div className="modal">
         </div>
         <div className="settings">
-          <div className="set-timers">
-            <div className="set-session">
-              <h4>session</h4>
-              <button onClick={() => increaseDecrease('session', sessionLength + 1)}>+</button>
-              <span>{sessionLength}</span>
-              <button onClick={() => increaseDecrease('session', sessionLength - 1)}>-</button>
-            </div>
-            <div className="set-break">
-              <h4>break</h4>
-              <button onClick={() => increaseDecrease('break', breakLength + 1)}>+</button>
-              <span>{breakLength}</span>
-              <button onClick={() => increaseDecrease('break', breakLength - 1)}>-</button>
-            </div>
-          </div>
           <div className="saved-timers">
             {savedTimersList}
+          </div>
+          <div className="set-timers">
+            <div className="set-timer">
+              <div className="set-timer-title">SESSION</div>
+              <div className="set-timer-button" onClick={() => increaseDecrease('session', sessionLength + 1)}>
+                <i className="fa fa-plus-circle"></i>
+              </div>
+              <div className="set-timer-value">{sessionLength}</div>
+              <div className="set-timer-button" onClick={() => increaseDecrease('session', sessionLength - 1)}>
+                <i className="fa fa-minus-circle"></i>
+              </div>
+            </div>
+            <div className="set-timer">
+              <div className="set-timer-title">BREAK</div>
+              <div className="set-timer-button" onClick={() => increaseDecrease('session', sessionLength + 1)}>
+                <i className="fa fa-plus-circle"></i>
+              </div>
+              <div className="set-timer-value">{breakLength}</div>
+              <div className="set-timer-button" onClick={() => increaseDecrease('session', sessionLength - 1)}>
+                <i className="fa fa-minus-circle"></i>
+              </div>
+            </div>
           </div>
         </div>
       </div>

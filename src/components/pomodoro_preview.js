@@ -26,15 +26,15 @@ class PomodoroPreview extends Component {
       <div className="preview">
         <div className="preview-session">
           <h3>SESSION</h3>
-          <button onClick={() => increaseDecrease('session', sessionLength + 1)}>+</button>
+          {/* <button onClick={() => increaseDecrease('session', sessionLength + 1)}>+</button> */}
           <div>{sessionLength}</div>
-          <button onClick={() => increaseDecrease('session', sessionLength - 1)}>-</button>
+          {/* <button onClick={() => increaseDecrease('session', sessionLength - 1)}>-</button> */}
         </div>
         <div className="preview-break">
           <h3>BREAK</h3>
-          <button onClick={() => increaseDecrease('break', breakLength + 1)}>+</button>
+          {/* <button onClick={() => increaseDecrease('break', breakLength + 1)}>+</button> */}
           <div>{breakLength}</div>
-          <button onClick={() => increaseDecrease('break', breakLength - 1)}>-</button>
+          {/* <button onClick={() => increaseDecrease('break', breakLength - 1)}>-</button> */}
         </div>
       </div>
     );
