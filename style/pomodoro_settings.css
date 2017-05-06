@@ -62,9 +62,18 @@
   font-size: 1.5em;
 }
 .set-timer-button i {
-  color: hsla(200, 40%, 40%, 1);
+  /*color: hsla(200, 40%, 40%, 1);*/
+  /*color: hsla(360, 1%, 81%, 1);*/
+  color: hsla(360, 1%, 78%, 1);
   font-size: 2.7em;
-  text-shadow: 2px 2px 3px #3f3f3f;
+  transition: color .2s;
+  /*text-shadow: 2px 2px 3px #3f3f3f;*/
+}
+.set-timer-button i:hover {
+  color: hsla(360, 1%, 71%, 1);
+}
+.set-timer-button i:active {
+  color: hsla(360, 1%, 67%, 1);
 }
 .set-timer-value {
   font-size: 1.5em;
@@ -90,9 +99,11 @@
 .saved-timers {
   display: flex;
   flex-wrap: wrap;
+  color: #000;
 }
 .saved-timer {
-  background-color: hsla(200, 40%, 40%, 1);
+  /*background-color: hsla(200, 40%, 40%, 1);*/
+  background-color: hsla(360, 1%, 81%, 1);
   display: flex;
   justify-content: space-between;
   margin: 10px 0 0 10px;
@@ -101,11 +112,14 @@
   transition: box-shadow 0.2s, background-color 0.2s;
 }
 .saved-timer:hover {
-  background-color: hsla(200, 40%, 35%, 1);
+  /*background-color: hsla(200, 40%, 35%, 1);*/
+  background-color: hsla(360, 1%, 71%, 1);
 }
 .saved-timer.selected {
-  box-shadow: 0 0 0 #3f3f3f;
-  background-color: hsla(200, 40%, 35%, 1);
+  /*box-shadow: 0 0 0 #3f3f3f;*/
+  /*background-color: hsla(200, 40%, 35%, 1);*/
+  background-color: hsla(360, 1%, 71%, 1);
+  box-shadow: .5px .5px 0 #3f3f3f;
 }
 .saved-timer-values {
   padding: 8px;
@@ -114,7 +128,7 @@
   padding: 8px 8px 8px 10px;
 }
 .saved-timer-close i {
-  color: hsla(200, 100%, 100%, 0.4);
+  /*color: hsla(200, 100%, 100%, 0.4);*/
   transition: color 0.2s;
 }
 .saved-timer-close:hover > i {
