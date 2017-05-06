@@ -44,6 +44,14 @@ class PomodoroSettings extends Component {
       this.props.updateSetTimers(newTimers);
     }
 
+    const increaseDecrease = (timer, newValue) => {
+      // const isCurrentTimer = timer === currentTimer;
+      // return isRunning
+      //   ? false
+      //   : this.props.changeTimerLength(timer, newValue, isCurrentTimer);
+      this.props.changeTimerLength(timer, newValue);
+    }
+
     const savedTimersList = savedTimers.map((timer) => {
       return (
         <div
@@ -62,14 +70,6 @@ class PomodoroSettings extends Component {
         </div>
       );
     });
-
-    /* button - increase-decrease */
-    const increaseDecrease = (timer, newValue) => {
-      const isCurrentTimer = timer === currentTimer;
-      return isRunning
-        ? false
-        : this.props.changeTimerLength(timer, newValue, isCurrentTimer);
-    }
 
     return (
       <div>
@@ -100,10 +100,11 @@ class PomodoroSettings extends Component {
                 <i className="fa fa-plus-circle"></i>
               </div>
             </div>
-            <div className="set-timers-buttons">
+            {/* <div className="set-timers-buttons">
               <div className="set-timers-buttons-set">SET</div>
               <div className="set-timers-buttons-save">SAVE</div>
-            </div>
+            </div> */}
+            <div className="set-timers-button-save">SAVE</div>
           </div>
         </div>
       </div>

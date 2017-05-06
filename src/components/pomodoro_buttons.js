@@ -11,8 +11,8 @@ let timer;
 class PomodoroButtons extends Component {
   render() {
     let {
-      sessionLength,
-      breakLength,
+      currentSessionLength,
+      currentBreakLength,
       currentTimer
     } = this.props;
     /* helper = stop timer */
@@ -40,7 +40,7 @@ class PomodoroButtons extends Component {
     /* button - next */
     const nextTimer = () => {
       stopTimer();
-      this.props.changeTimer(currentTimer, sessionLength, breakLength);
+      this.props.changeTimer(currentTimer, currentSessionLength, currentBreakLength);
       startTimer();
     }
     /* button - reset */
@@ -61,8 +61,8 @@ class PomodoroButtons extends Component {
 }
 
 PomodoroButtons.propTypes = {
-  sessionLength: PropTypes.number,
-  breakLength: PropTypes.number,
+  currentSessionLength: PropTypes.number,
+  currentBreakLength: PropTypes.number,
   runningTime: PropTypes.number,
   isRunning: PropTypes.bool,
   currentTimer: PropTypes.string,
@@ -74,8 +74,8 @@ PomodoroButtons.propTypes = {
 
 const mapStateToProps = (state) => {
   return {
-    sessionLength: state.data.sessionLength,
-    breakLength: state.data.breakLength,
+    currentSessionLength: state.data.currentSessionLength,
+    currentBreakLength: state.data.currentBreakLength,
     runningTime: state.data.runningTime,
     isRunning: state.data.isRunning,
     currentTimer: state.data.currentTimer,

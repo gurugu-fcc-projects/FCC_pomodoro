@@ -10,9 +10,11 @@ import {
 } from '../actions/types';
 
 const INIT_STATE = {
+  currentSessionLength: 11,
+  currentBreakLength: 6,
   sessionLength: 10,
   breakLength: 5,
-  runningTime: 10,
+  runningTime: 11,
   isRunning: false,
   currentTimer: 'session',
   savedTimers: [
@@ -53,11 +55,16 @@ export default function (state = INIT_STATE, action) {
         runningTime: action.payload.runningTime
       };
     case CHANGE_TIMER_LENGTH:
-      const { length, newValue, isCurrentTimer } = action.payload;
-
-      return isCurrentTimer
-        ? { ...state, [length]: newValue, runningTime: newValue}
-        : { ...state, [length]: newValue}
+      // const { length, newValue, isCurrentTimer } = action.payload;
+      // const { length, newValue } = action.payload;
+      //
+      // return isCurrentTimer
+      //   ? { ...state, [length]: newValue, runningTime: newValue}
+      //   : { ...state, [length]: newValue}
+      return {
+        ...state,
+        [action.payload.length]: action.payload.newValue
+      };
     case CHANGE_RUNTIME:
       return {
         ...state,
@@ -73,8 +80,8 @@ export default function (state = INIT_STATE, action) {
     case CHOOSE_TIMER:
       return {
         ...state,
-        sessionLength: action.payload.sessionLength,
-        breakLength: action.payload.breakLength,
+        currentSessionLength: action.payload.sessionLength,
+        currentBreakLength: action.payload.breakLength,
         runningTime: action.payload.sessionLength,
         isRunning: false
       };

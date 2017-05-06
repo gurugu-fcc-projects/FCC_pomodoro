@@ -81,7 +81,23 @@
   padding: 0 15px;
   width: 35px;
 }
-.set-timers-buttons {
+.set-timers-button-save {
+  background-color: hsla(360, 1%, 78%, 1);
+  padding: 10px 0;
+  margin: 30px 10px;
+  text-align: center;
+  font-size: 1.3em;
+  width: 340px;
+  transition: background-color .2s;
+}
+.set-timers-button-save:hover {
+  background-color: hsla(360, 1%, 71%, 1);
+}
+.set-timers-button-save:active {
+  background-color: hsla(360, 1%, 67%, 1);
+}
+
+/*.set-timers-buttons {
   display: flex;
   justify-content: center;
   margin: 30px 10px;
@@ -89,7 +105,7 @@
 .set-timers-buttons-set,
 .set-timers-buttons-save {
   background-color: hsla(360, 1%, 78%, 1);
-  /*color: #fff;*/
+  color: #fff;
   width: 60px;
   padding: 10px 20px;
   border-radius: 7px;
@@ -104,7 +120,7 @@
 .set-timers-buttons-set:active,
 .set-timers-buttons-save:active {
   background-color: hsla(360, 1%, 67%, 1);
-}
+}*/
 
 /*======================
  Saved timers list

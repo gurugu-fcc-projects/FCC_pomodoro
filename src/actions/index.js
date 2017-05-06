@@ -34,12 +34,19 @@ export const changeTimer = (currentTimer, sessionLength, breakLength) => {
 }
 
 export const changeTimerLength = (timer, newValue, isCurrentTimer) => {
+  // return {
+  //   type: CHANGE_TIMER_LENGTH,
+  //   payload: {
+  //     length: timer === 'session' ? 'sessionLength' : 'breakLength',
+  //     newValue: newValue,
+  //     isCurrentTimer: isCurrentTimer
+  //   }
+  // };
   return {
     type: CHANGE_TIMER_LENGTH,
     payload: {
       length: timer === 'session' ? 'sessionLength' : 'breakLength',
-      newValue: newValue,
-      isCurrentTimer: isCurrentTimer
+      newValue: newValue
     }
   };
 }
