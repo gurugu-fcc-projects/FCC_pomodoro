@@ -86,13 +86,17 @@ class PomodoroSettings extends Component {
             </div>
             <div className="set-timer">
               <div className="set-timer-title">BREAK</div>
-              <div className="set-timer-button" onClick={() => increaseDecrease('session', sessionLength + 1)}>
+              <div className="set-timer-button" onClick={() => increaseDecrease('break', breakLength + 1)}>
                 <i className="fa fa-plus-circle"></i>
               </div>
               <div className="set-timer-value">{breakLength}</div>
-              <div className="set-timer-button" onClick={() => increaseDecrease('session', sessionLength - 1)}>
+              <div className="set-timer-button" onClick={() => increaseDecrease('break', breakLength - 1)}>
                 <i className="fa fa-minus-circle"></i>
               </div>
+            </div>
+            <div className="set-timers-buttons">
+              <div className="set-timers-buttons-set">SET</div>
+              <div className="set-timers-buttons-save">SAVE</div>
             </div>
           </div>
         </div>
