@@ -77,9 +77,8 @@ const mapStateToProps = (state) => {
     sessionLength: state.data.sessionLength,
     breakLength: state.data.breakLength,
     runningTime: state.data.runningTime,
-    currentTimer: state.data.currentTimer,
     isRunning: state.data.isRunning,
-    tmp: state.data.tmp
+    currentTimer: state.data.currentTimer,
   };
 }
 
