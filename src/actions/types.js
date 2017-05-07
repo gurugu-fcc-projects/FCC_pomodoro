@@ -6,3 +6,4 @@ export const CHANGE_RUNTIME = 'change_runtime';
 export const RESET_ALL = 'reset_all';
 export const CHOOSE_TIMER = 'choose_timer';
 export const UPDATE_SET_TIMERS = 'update_set_timers';
+export const SAVE_TIMER = 'save_timer';

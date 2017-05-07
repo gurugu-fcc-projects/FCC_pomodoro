@@ -59,34 +59,30 @@ describe('changeTimerLength', () => {
   it('changes session length with current session timer', () => {
     const actionObject = {type: CHANGE_TIMER_LENGTH, payload: {
       length: 'sessionLength',
-      newValue: 25,
-      isCurrentTimer: true
+      newValue: 25
     }};
-    expect(changeTimerLength('session', 25, true)).toEqual(actionObject);
+    expect(changeTimerLength('session', 25)).toEqual(actionObject);
   });
   it('changes session length with current break timer', () => {
     const actionObject = {type: CHANGE_TIMER_LENGTH, payload: {
       length: 'sessionLength',
-      newValue: 25,
-      isCurrentTimer: false
+      newValue: 25
     }};
-    expect(changeTimerLength('session', 25, false)).toEqual(actionObject);
+    expect(changeTimerLength('session', 25)).toEqual(actionObject);
   });
   it('changes break length with current break timer', () => {
     const actionObject = {type: CHANGE_TIMER_LENGTH, payload: {
       length: 'breakLength',
-      newValue: 25,
-      isCurrentTimer: true
+      newValue: 25
     }};
-    expect(changeTimerLength('break', 25, true)).toEqual(actionObject);
+    expect(changeTimerLength('break', 25)).toEqual(actionObject);
   });
   it('changes break length with current break timer', () => {
     const actionObject = {type: CHANGE_TIMER_LENGTH, payload: {
       length: 'breakLength',
-      newValue: 25,
-      isCurrentTimer: false
+      newValue: 25
     }};
-    expect(changeTimerLength('break', 25, false)).toEqual(actionObject);
+    expect(changeTimerLength('break', 25)).toEqual(actionObject);
   });
 });
 
