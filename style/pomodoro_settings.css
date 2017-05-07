@@ -26,14 +26,14 @@
   display: flex;
   flex-direction: column;
   position: fixed;
-  right: -400px;
+  right: -260px;
   top: 0; right: 0;
   z-index: 2;
-  transform: translateX(400px);
+  transform: translateX(260px);
   background-color: hsla(200, 40%, 40%, 1);
   background-color: #F9C997;
   background-color: #e4e4e4;
-  height: 100%; width: 400px;
+  height: 100%; width: 260px;
   transition: transform .4s;
 }
 .settings-show {
@@ -41,7 +41,54 @@
 }
 .saved-timers,
 .set-timers {
-  margin: 20px;
+  margin: 20px 10px;
+}
+
+/*======================
+ Saved timers list
+======================*/
+
+.saved-timers {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  color: #000;
+}
+.saved-timer {
+  /*background-color: hsla(200, 40%, 40%, 1);*/
+  background-color: hsla(360, 1%, 81%, 1);
+  display: flex;
+  justify-content: space-between;
+  /*margin: 10px 0 0 10px;*/
+  box-shadow: 2px 2px 3px #3f3f3f;
+  cursor: pointer;
+  transition: box-shadow 0.2s, background-color 0.2s;
+}
+.saved-timer:hover {
+  /*background-color: hsla(200, 40%, 35%, 1);*/
+  background-color: hsla(360, 1%, 71%, 1);
+}
+.saved-timer.selected {
+  /*box-shadow: 0 0 0 #3f3f3f;*/
+  /*background-color: hsla(200, 40%, 35%, 1);*/
+  background-color: hsla(360, 1%, 71%, 1);
+  box-shadow: .5px .5px 0 #3f3f3f;
+}
+.saved-timer-values {
+  padding: 6px;
+}
+.saved-timer-close {
+  padding: 6px 6px 6px 8px;
+}
+.saved-timer-close i {
+  /*color: hsla(200, 100%, 100%, 0.4);*/
+  transition: color 0.2s;
+}
+.saved-timer-close:hover > i {
+  color: hsla(200, 100%, 100%, 0.8);
+}
+.saved-timer-close:active > i {
+  color: hsla(200, 100%, 100%, 1);
 }
 
 /*======================
@@ -55,7 +102,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 10px;
+  /*margin: 10px;*/
 }
 .set-timer-title {
   flex-grow: 3;
@@ -78,16 +125,16 @@
 .set-timer-value {
   font-size: 1.5em;
   text-align: center;
-  padding: 0 15px;
+  padding: 0 10px;
   width: 35px;
 }
 .set-timers-button-save {
   background-color: hsla(360, 1%, 78%, 1);
   padding: 10px 0;
-  margin: 30px 10px;
+  margin-top: 15px;
   text-align: center;
   font-size: 1.3em;
-  width: 340px;
+  width: 100%;
   transition: background-color .2s;
 }
 .set-timers-button-save:hover {
@@ -121,50 +168,3 @@
 .set-timers-buttons-save:active {
   background-color: hsla(360, 1%, 67%, 1);
 }*/
-
-/*======================
- Saved timers list
-======================*/
-
-.saved-timers {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  color: #000;
-}
-.saved-timer {
-  /*background-color: hsla(200, 40%, 40%, 1);*/
-  background-color: hsla(360, 1%, 81%, 1);
-  display: flex;
-  justify-content: space-between;
-  margin: 10px 0 0 10px;
-  box-shadow: 2px 2px 3px #3f3f3f;
-  cursor: pointer;
-  transition: box-shadow 0.2s, background-color 0.2s;
-}
-.saved-timer:hover {
-  /*background-color: hsla(200, 40%, 35%, 1);*/
-  background-color: hsla(360, 1%, 71%, 1);
-}
-.saved-timer.selected {
-  /*box-shadow: 0 0 0 #3f3f3f;*/
-  /*background-color: hsla(200, 40%, 35%, 1);*/
-  background-color: hsla(360, 1%, 71%, 1);
-  box-shadow: .5px .5px 0 #3f3f3f;
-}
-.saved-timer-values {
-  padding: 8px;
-}
-.saved-timer-close {
-  padding: 8px 8px 8px 10px;
-}
-.saved-timer-close i {
-  /*color: hsla(200, 100%, 100%, 0.4);*/
-  transition: color 0.2s;
-}
-.saved-timer-close:hover > i {
-  color: hsla(200, 100%, 100%, 0.8);
-}
-.saved-timer-close:active > i {
-  color: hsla(200, 100%, 100%, 1);
-}
