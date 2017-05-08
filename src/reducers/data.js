@@ -12,8 +12,8 @@ import {
 const INIT_STATE = {
   currentSessionLength: 1500,
   currentBreakLength: 300,
-  sessionLength: 0,
-  breakLength: 0,
+  sessionLength: 1,
+  breakLength: 1,
   runningTime: 1500,
   isRunning: false,
   currentTimer: 'session',

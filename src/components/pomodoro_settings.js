@@ -47,7 +47,7 @@ class PomodoroSettings extends Component {
         ? currentValue + 1
         : currentValue - 1;
 
-      if (newValue < 0) { // min value 0
+      if (newValue < 1) { // min value 1
         return false;
       } else if (newValue > 99) { // max value 99
         return false;
