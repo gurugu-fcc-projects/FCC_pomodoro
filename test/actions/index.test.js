@@ -17,7 +17,8 @@ import {
   changeRunningTime,
   resetAll,
   chooseTimer,
-  updateSetTimers
+  updateSetTimers,
+  saveTimer
 } from '../../src/actions/index';
 
 describe('startStopTimer', () => {

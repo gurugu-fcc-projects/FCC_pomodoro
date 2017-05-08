@@ -50,7 +50,8 @@
 
 .saved-timers {
   display: flex;
-  justify-content: space-between;
+  /*justify-content: space-between;*/
+  /*align-content: space-between;*/
   flex-wrap: wrap;
   color: #000;
 }
@@ -61,6 +62,8 @@
   justify-content: space-between;
   /*margin: 10px 0 0 10px;*/
   box-shadow: 2px 2px 3px #3f3f3f;
+  width: 70px;
+  margin: 5px;
   cursor: pointer;
   transition: box-shadow 0.2s, background-color 0.2s;
 }
@@ -75,10 +78,10 @@
   box-shadow: .5px .5px 0 #3f3f3f;
 }
 .saved-timer-values {
-  padding: 6px;
+  padding: 6px 4px 6px 6px;
 }
 .saved-timer-close {
-  padding: 6px 6px 6px 8px;
+  padding: 6px 6px 6px 4px;
 }
 .saved-timer-close i {
   /*color: hsla(200, 100%, 100%, 0.4);*/

@@ -52,6 +52,18 @@ class PomodoroSettings extends Component {
       this.props.changeTimerLength(timer, newValue);
     }
 
+    const saveTimer = () => {
+      const newTimer = {
+        id: Date.now(),
+        session: sessionLength,
+        break: breakLength
+      };
+
+      console.log(newTimer);
+      
+      this.props.updateSetTimers([...savedTimers, newTimer]);
+    }
+
     const savedTimersList = savedTimers.map((timer) => {
       return (
         <div
@@ -104,7 +116,7 @@ class PomodoroSettings extends Component {
               <div className="set-timers-buttons-set">SET</div>
               <div className="set-timers-buttons-save">SAVE</div>
             </div> */}
-            <div className="set-timers-button-save">SAVE</div>
+            <div className="set-timers-button-save" onClick={saveTimer}>SAVE</div>
           </div>
         </div>
       </div>
@@ -120,7 +132,8 @@ PomodoroSettings.propTypes = {
   savedTimers: PropTypes.array,
   changeTimerLength: PropTypes.func,
   chooseTimer: PropTypes.func,
-  updateSetTimers: PropTypes.func
+  updateSetTimers: PropTypes.func,
+  // saveTimer: PropTypes.func
 }
 
 const mapStateToProps = (state) => {
