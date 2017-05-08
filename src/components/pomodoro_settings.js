@@ -46,10 +46,10 @@ class PomodoroSettings extends Component {
       const newValue = operation === 'increase'
         ? currentValue + 1
         : currentValue - 1;
-      // min-max values - 0 and 99
-      if (newValue < 0) {
+
+      if (newValue < 0) { // min value 0
         return false;
-      } else if (newValue > 99) {
+      } else if (newValue > 99) { // max value 99
         return false;
       } else {
         this.props.changeTimerLength(timer, newValue);
@@ -62,8 +62,6 @@ class PomodoroSettings extends Component {
         session: sessionLength,
         break: breakLength
       };
-
-      console.log(newTimer);
 
       this.props.updateSetTimers([...savedTimers, newTimer]);
     }

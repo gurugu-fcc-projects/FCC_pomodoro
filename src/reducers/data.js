@@ -10,11 +10,11 @@ import {
 } from '../actions/types';
 
 const INIT_STATE = {
-  currentSessionLength: 11,
-  currentBreakLength: 6,
-  sessionLength: 10,
-  breakLength: 5,
-  runningTime: 11,
+  currentSessionLength: 25,
+  currentBreakLength: 5,
+  sessionLength: 0,
+  breakLength: 0,
+  runningTime: 1500,
   isRunning: false,
   currentTimer: 'session',
   savedTimers: [
