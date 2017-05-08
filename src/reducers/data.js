@@ -10,8 +10,8 @@ import {
 } from '../actions/types';
 
 const INIT_STATE = {
-  currentSessionLength: 25,
-  currentBreakLength: 5,
+  currentSessionLength: 1500,
+  currentBreakLength: 300,
   sessionLength: 0,
   breakLength: 0,
   runningTime: 1500,
@@ -67,7 +67,7 @@ export default function (state = INIT_STATE, action) {
     case RESET_ALL:
       return {
         ...state,
-        runningTime: state.sessionLength,
+        runningTime: state.currentSessionLength,
         isRunning: false,
         currentTimer: 'session'
       };

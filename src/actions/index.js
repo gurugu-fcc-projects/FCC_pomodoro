@@ -60,7 +60,10 @@ export const resetAll = () => {
 export const chooseTimer = (sessionLength, breakLength) => {
   return {
     type: CHOOSE_TIMER,
-    payload: { sessionLength, breakLength }
+    payload: {
+      sessionLength: sessionLength * 60,
+      breakLength: breakLength * 60
+    }
   };
 }
 
