@@ -6,7 +6,7 @@ import {
   CHANGE_RUNTIME,
   RESET_ALL,
   CHOOSE_TIMER,
-  UPDATE_SET_TIMERS
+  UPDATE_SET_TIMERS,
 } from '../actions/types';
 
 const INIT_STATE = {
@@ -55,12 +55,6 @@ export default function (state = INIT_STATE, action) {
         runningTime: action.payload.runningTime
       };
     case CHANGE_TIMER_LENGTH:
-      // const { length, newValue, isCurrentTimer } = action.payload;
-      // const { length, newValue } = action.payload;
-      //
-      // return isCurrentTimer
-      //   ? { ...state, [length]: newValue, runningTime: newValue}
-      //   : { ...state, [length]: newValue}
       return {
         ...state,
         [action.payload.length]: action.payload.newValue

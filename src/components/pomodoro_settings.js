@@ -19,8 +19,6 @@ class PomodoroSettings extends Component {
     const {
       sessionLength,
       breakLength,
-      isRunning,
-      currentTimer,
       savedTimers
     } = this.props;
 
@@ -44,12 +42,18 @@ class PomodoroSettings extends Component {
       this.props.updateSetTimers(newTimers);
     }
 
-    const increaseDecrease = (timer, newValue) => {
-      // const isCurrentTimer = timer === currentTimer;
-      // return isRunning
-      //   ? false
-      //   : this.props.changeTimerLength(timer, newValue, isCurrentTimer);
-      this.props.changeTimerLength(timer, newValue);
+    const increaseDecrease = (timer, currentValue, operation) => {
+      const newValue = operation === 'increase'
+        ? currentValue + 1
+        : currentValue - 1;
+      // min-max values - 0 and 99
+      if (newValue < 0) {
+        return false;
+      } else if (newValue > 99) {
+        return false;
+      } else {
+        this.props.changeTimerLength(timer, newValue);
+      }
     }
 
     const saveTimer = () => {
@@ -60,7 +64,7 @@ class PomodoroSettings extends Component {
       };
 
       console.log(newTimer);
-      
+
       this.props.updateSetTimers([...savedTimers, newTimer]);
     }
 
@@ -94,28 +98,24 @@ class PomodoroSettings extends Component {
           <div className="set-timers">
             <div className="set-timer">
               <div className="set-timer-title">SESSION</div>
-              <div className="set-timer-button" onClick={() => increaseDecrease('session', sessionLength - 1)}>
+              <div className="set-timer-button" onClick={() => increaseDecrease('session', sessionLength, 'decrease')}>
                 <i className="fa fa-minus-circle"></i>
               </div>
               <div className="set-timer-value">{sessionLength}</div>
-              <div className="set-timer-button" onClick={() => increaseDecrease('session', sessionLength + 1)}>
+              <div className="set-timer-button" onClick={() => increaseDecrease('session', sessionLength, 'increase')}>
                 <i className="fa fa-plus-circle"></i>
               </div>
             </div>
             <div className="set-timer">
               <div className="set-timer-title">BREAK</div>
-              <div className="set-timer-button" onClick={() => increaseDecrease('break', breakLength - 1)}>
+              <div className="set-timer-button" onClick={() => increaseDecrease('break', breakLength, 'decrease')}>
                 <i className="fa fa-minus-circle"></i>
               </div>
               <div className="set-timer-value">{breakLength}</div>
-              <div className="set-timer-button" onClick={() => increaseDecrease('break', breakLength + 1)}>
+              <div className="set-timer-button" onClick={() => increaseDecrease('break', breakLength, 'increase')}>
                 <i className="fa fa-plus-circle"></i>
               </div>
             </div>
-            {/* <div className="set-timers-buttons">
-              <div className="set-timers-buttons-set">SET</div>
-              <div className="set-timers-buttons-save">SAVE</div>
-            </div> */}
             <div className="set-timers-button-save" onClick={saveTimer}>SAVE</div>
           </div>
         </div>
@@ -127,21 +127,16 @@ class PomodoroSettings extends Component {
 PomodoroSettings.propTypes = {
   sessionLength: PropTypes.number,
   breakLength: PropTypes.number,
-  isRunning: PropTypes.bool,
-  currentTimer: PropTypes.string,
   savedTimers: PropTypes.array,
   changeTimerLength: PropTypes.func,
   chooseTimer: PropTypes.func,
-  updateSetTimers: PropTypes.func,
-  // saveTimer: PropTypes.func
+  updateSetTimers: PropTypes.func
 }
 
 const mapStateToProps = (state) => {
   return {
     sessionLength: state.data.sessionLength,
     breakLength: state.data.breakLength,
-    isRunning: state.data.isRunning,
-    currentTimer: state.data.currentTimer,
     savedTimers: state.data.savedTimers
   };
 }
