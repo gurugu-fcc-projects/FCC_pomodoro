@@ -13,7 +13,8 @@ class PomodoroButtons extends Component {
     let {
       currentSessionLength,
       currentBreakLength,
-      currentTimer
+      currentTimer,
+      pomodoroStart
     } = this.props;
     /* helper = stop timer */
     const stopTimer = () => {
@@ -46,7 +47,9 @@ class PomodoroButtons extends Component {
     /* button - next */
     const nextTimer = () => {
       stopTimer();
-      this.props.saveOldPomodoro(currentTimer);
+      if (pomodoroStart) {
+        this.props.saveOldPomodoro(currentTimer);
+      }
       this.props.changeTimer(currentTimer, currentSessionLength, currentBreakLength);
       startTimer();
     }
@@ -73,6 +76,7 @@ PomodoroButtons.propTypes = {
   runningTime: PropTypes.number,
   isRunning: PropTypes.bool,
   currentTimer: PropTypes.string,
+  pomodoroStart: PropTypes.string,
   startStopTimer: PropTypes.func,
   runTimer: PropTypes.func,
   changeTimer: PropTypes.func,
@@ -89,6 +93,7 @@ const mapStateToProps = (state) => {
     runningTime: state.data.runningTime,
     isRunning: state.data.isRunning,
     currentTimer: state.data.currentTimer,
+    pomodoroStart: state.data.pomodoroStart
   };
 }
 
