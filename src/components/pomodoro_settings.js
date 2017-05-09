@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 
-import { showHideSettings } from '../utils/common';
+import { showHideSettings, showTime } from '../utils/common';
 import '../../style/pomodoro_settings.css';
 
 class PomodoroSettings extends Component {
@@ -96,21 +96,6 @@ class PomodoroSettings extends Component {
       this.props.updateSetTimers(newTimers);
     }
 
-    const increaseDecrease = (timer, currentValue, operation) => {
-      // const newValue = operation === 'increase'
-      //   ? currentValue + 1
-      //   : currentValue - 1;
-      //
-      //
-      // if (newValue < 1) { // min value 1
-      //   return false;
-      // } else if (newValue > 99) { // max value 99
-      //   return false;
-      // } else {
-      //   this.props.changeTimerLength(timer, newValue);
-      // }
-    }
-
     const saveTimer = () => {
       const newTimer = {
         id: Date.now(),
@@ -144,7 +129,7 @@ class PomodoroSettings extends Component {
       return (
         <div key={pomodoro.id}>
           <div>Timer: {pomodoro.type}</div>
-          <div>Length: {pomodoro.length}</div>
+          <div>Length: {showTime(pomodoro.length)}</div>
           <div>Start: {pomodoro.start}</div>
           <div>End: {pomodoro.end}</div>
         </div>
@@ -162,21 +147,21 @@ class PomodoroSettings extends Component {
           <div className="set-timers">
             <div className="set-timer">
               <div className="set-timer-title">SESSION</div>
-              <div className="set-timer-button session-decrease" onClick={() => increaseDecrease('session', sessionLength, 'decrease')}>
+              <div className="set-timer-button session-decrease">
                 <i className="fa fa-minus-circle"></i>
               </div>
               <div className="set-timer-value">{sessionLength}</div>
-              <div className="set-timer-button session-increase" onClick={() => increaseDecrease('session', sessionLength, 'increase')}>
+              <div className="set-timer-button session-increase">
                 <i className="fa fa-plus-circle"></i>
               </div>
             </div>
             <div className="set-timer">
               <div className="set-timer-title">BREAK</div>
-              <div className="set-timer-button break-decrease" onClick={() => increaseDecrease('break', breakLength, 'decrease')}>
+              <div className="set-timer-button break-decrease">
                 <i className="fa fa-minus-circle"></i>
               </div>
               <div className="set-timer-value">{breakLength}</div>
-              <div className="set-timer-button break-increase" onClick={() => increaseDecrease('break', breakLength, 'increase')}>
+              <div className="set-timer-button break-increase">
                 <i className="fa fa-plus-circle"></i>
               </div>
             </div>
