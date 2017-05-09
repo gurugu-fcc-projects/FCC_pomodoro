@@ -26,9 +26,17 @@ class PomodoroButtons extends Component {
     }
     /* helper = runningTime countdown */
     const countdown = () => {
-      this.props.runningTime <= 0 || this.props.isRunning === false
-        ? stopTimer()
-        : this.props.runTimer(this.props.runningTime);
+      // this.props.runningTime <= 0 || this.props.isRunning === false
+      //   ? stopTimer()
+      //   : this.props.runTimer(this.props.runningTime);
+
+      if (this.props.isRunning === false) {
+        stopTimer();
+      } else if (this.props.runningTime <= 0) {
+        this.props.countForwards(this.props.timeForwards);
+      } else {
+        this.props.countBackwards(this.props.timeBackwards);
+      }
     }
     /* helper = start timer */
     const startTimer = () => {
