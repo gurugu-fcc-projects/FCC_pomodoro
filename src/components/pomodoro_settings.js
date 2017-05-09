@@ -8,10 +8,69 @@ import '../../style/pomodoro_settings.css';
 
 class PomodoroSettings extends Component {
   componentDidMount() {
+    const setTimerButtons = document.querySelectorAll('.set-timer-button');
+    let timeoutId;
+    let intervalId;
+
+    const determineTimer = (elementClass) => {
+      return elementClass.indexOf('session') !== -1 ? 'session' : 'break';
+    }
+
+    const determineNewValue = (elementClass, timer) => {
+      const operation =  elementClass.indexOf('increase') !== -1 ? 'increase' : 'decrease';
+      if (timer === 'session' && operation === 'increase') {
+        return this.props.sessionLength + 1;
+      } else if (timer === 'session' && operation === 'decrease') {
+        return this.props.sessionLength - 1;
+      } else if (timer === 'break' && operation === 'increase') {
+        return this.props.breakLength + 1;
+      } else if (timer === 'break' && operation === 'decrease') {
+        return this.props.breakLength - 1;
+      }
+    }
+
+    const increaseDecrease = (buttonClass, timer) => {
+      const newValue = determineNewValue(buttonClass, timer);
+
+      if (newValue < 1) { // min value 1
+        return false;
+      } else if (newValue > 99) { // max value 99
+        return false;
+      } else {
+        this.props.changeTimerLength(timer, newValue);
+      }
+    }
+
+    // show-hide settings panel
     window.addEventListener('click', (event) => {
       if (event.target === document.querySelector('.modal')) {
         showHideSettings();
       }
+    });
+
+    // increase-decrease timer with various speed
+    setTimerButtons.forEach((button) => {
+      button.addEventListener('mousedown', (event) => {
+        const buttonClass = event.target.parentNode.classList[1];
+        const timer = determineTimer(buttonClass);
+
+        increaseDecrease(buttonClass, timer);
+
+        timeoutId = window.setTimeout(() => {
+          intervalId = window.setInterval(() => {
+            increaseDecrease(buttonClass, timer);
+          }, 200);
+        }, 500);
+
+        // timeoutId = window.setTimeout(() => {
+        //   window.setInterval(increaseDecrease(timer, newValue), 500);
+        // }, 1000);
+      });
+      button.addEventListener('mouseup', (event) => {
+        console.log('releasing...');
+        clearInterval(intervalId);
+        clearTimeout(timeoutId);
+      });
     });
   }
 
@@ -43,17 +102,18 @@ class PomodoroSettings extends Component {
     }
 
     const increaseDecrease = (timer, currentValue, operation) => {
-      const newValue = operation === 'increase'
-        ? currentValue + 1
-        : currentValue - 1;
-
-      if (newValue < 1) { // min value 1
-        return false;
-      } else if (newValue > 99) { // max value 99
-        return false;
-      } else {
-        this.props.changeTimerLength(timer, newValue);
-      }
+      // const newValue = operation === 'increase'
+      //   ? currentValue + 1
+      //   : currentValue - 1;
+      //
+      //
+      // if (newValue < 1) { // min value 1
+      //   return false;
+      // } else if (newValue > 99) { // max value 99
+      //   return false;
+      // } else {
+      //   this.props.changeTimerLength(timer, newValue);
+      // }
     }
 
     const saveTimer = () => {
@@ -96,21 +156,21 @@ class PomodoroSettings extends Component {
           <div className="set-timers">
             <div className="set-timer">
               <div className="set-timer-title">SESSION</div>
-              <div className="set-timer-button" onClick={() => increaseDecrease('session', sessionLength, 'decrease')}>
+              <div className="set-timer-button session-decrease" onClick={() => increaseDecrease('session', sessionLength, 'decrease')}>
                 <i className="fa fa-minus-circle"></i>
               </div>
               <div className="set-timer-value">{sessionLength}</div>
-              <div className="set-timer-button" onClick={() => increaseDecrease('session', sessionLength, 'increase')}>
+              <div className="set-timer-button session-increase" onClick={() => increaseDecrease('session', sessionLength, 'increase')}>
                 <i className="fa fa-plus-circle"></i>
               </div>
             </div>
             <div className="set-timer">
               <div className="set-timer-title">BREAK</div>
-              <div className="set-timer-button" onClick={() => increaseDecrease('break', breakLength, 'decrease')}>
+              <div className="set-timer-button break-decrease" onClick={() => increaseDecrease('break', breakLength, 'decrease')}>
                 <i className="fa fa-minus-circle"></i>
               </div>
               <div className="set-timer-value">{breakLength}</div>
-              <div className="set-timer-button" onClick={() => increaseDecrease('break', breakLength, 'increase')}>
+              <div className="set-timer-button break-increase" onClick={() => increaseDecrease('break', breakLength, 'increase')}>
                 <i className="fa fa-plus-circle"></i>
               </div>
             </div>
