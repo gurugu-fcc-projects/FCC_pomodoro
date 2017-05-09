@@ -34,7 +34,6 @@ export const changeTimer = (currentTimer, sessionLength, breakLength) => {
 }
 
 export const changeTimerLength = (timer, newValue) => {
-  console.log(newValue);
   return {
     type: CHANGE_TIMER_LENGTH,
     payload: {
