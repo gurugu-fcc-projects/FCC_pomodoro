@@ -171,3 +171,11 @@
 .set-timers-buttons-save:active {
   background-color: hsla(360, 1%, 67%, 1);
 }*/
+
+/*======================
+ Statistics
+======================*/
+
+.statistics {
+  color: #000;
+}

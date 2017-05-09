@@ -6,7 +6,9 @@ import {
   CHANGE_RUNTIME,
   RESET_ALL,
   CHOOSE_TIMER,
-  UPDATE_SET_TIMERS
+  UPDATE_SET_TIMERS,
+  SAVE_OLD_POMODORO,
+  SAVE_START_TIME
 } from '../../src/actions/types';
 
 import {
@@ -18,7 +20,9 @@ import {
   resetAll,
   chooseTimer,
   updateSetTimers,
-  saveTimer
+  saveTimer,
+  saveOldPomodoro,
+  saveStartTime
 } from '../../src/actions/index';
 
 describe('startStopTimer', () => {
@@ -108,8 +112,8 @@ describe('resetAll', () => {
 describe('chooseTimer', () => {
   it('chooses new timer', () => {
     const actionObject = {type: CHOOSE_TIMER, payload: {
-      sessionLength: 25,
-      breakLength: 5
+      sessionLength: 1500,
+      breakLength: 300
     }};
     expect(chooseTimer(25, 5)).toEqual(actionObject);
   });
@@ -120,5 +124,20 @@ describe('updateSetTimers', () => {
     const actionObject = {type: UPDATE_SET_TIMERS, payload:
       [{id: 1, session: 25, break: 5}]};
     expect(updateSetTimers([{id: 1, session: 25, break: 5}])).toEqual(actionObject);
+  });
+});
+
+describe('saveOldPomodoro', () => {
+  it('sends data of the passed pomodoro', () => {
+    const actionObject = {type: SAVE_OLD_POMODORO, payload:
+      {type: 'session', length: 'currentSessionLength'}};
+    expect(saveOldPomodoro('session')).toEqual(actionObject);
+  });
+});
+
+describe('saveStartTime', () => {
+  it('save pomodoro start time', () => {
+    const actionObject = {type: SAVE_START_TIME, payload: 100000};
+    expect(saveStartTime(100000)).toEqual(actionObject);
   });
 });

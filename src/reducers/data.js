@@ -7,7 +7,8 @@ import {
   RESET_ALL,
   CHOOSE_TIMER,
   UPDATE_SET_TIMERS,
-  SAVE_OLD_POMODOROS
+  SAVE_OLD_POMODORO,
+  SAVE_START_TIME
 } from '../actions/types';
 
 const INIT_STATE = {
@@ -35,7 +36,8 @@ const INIT_STATE = {
       break: 10
     }
   ],
-  oldPomodoros: []
+  statistics: [],
+  pomodoroStart: 0
 };
 
 export default function (state = INIT_STATE, action) {
@@ -86,15 +88,20 @@ export default function (state = INIT_STATE, action) {
         ...state,
         savedTimers: action.payload
       };
-    case SAVE_OLD_POMODOROS:
-      console.log(state.oldPomodoros);
+    case SAVE_OLD_POMODORO:
       return {
         ...state,
-        oldPomodoros: [...state.oldPomodoros, {
+        statistics: [...state.statistics, {
+          id: Date.now(),
           type: action.payload.type,
-          length: action.payload.length
+          length: state[action.payload.length]
         }]
       };
+    case SAVE_START_TIME: {
+      return {
+        ...state, pomodoroStart: action.payload
+      }
+    }
     default:
       return state;
   }

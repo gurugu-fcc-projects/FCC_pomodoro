@@ -72,7 +72,8 @@ class PomodoroSettings extends Component {
     const {
       sessionLength,
       breakLength,
-      savedTimers
+      savedTimers,
+      statistics
     } = this.props;
 
     const chooseTimer = (event, sessionLength, breakLength) => {
@@ -139,6 +140,15 @@ class PomodoroSettings extends Component {
       );
     });
 
+    const statisticsList = statistics.map((pomodoro) => {
+      return (
+        <div key={pomodoro.id}>
+          <div>Timer: {pomodoro.type}</div>
+          <div>Length: {pomodoro.length}</div>
+        </div>
+      );
+    });
+
     return (
       <div>
         <div className="modal">
@@ -170,6 +180,10 @@ class PomodoroSettings extends Component {
             </div>
             <div className="set-timers-button-save" onClick={saveTimer}>SAVE</div>
           </div>
+          <div className="statistics">
+            <h3>STATISTICS</h3>
+            {statisticsList}
+          </div>
         </div>
       </div>
     );
@@ -180,6 +194,7 @@ PomodoroSettings.propTypes = {
   sessionLength: PropTypes.number,
   breakLength: PropTypes.number,
   savedTimers: PropTypes.array,
+  statistics: PropTypes.array,
   changeTimerLength: PropTypes.func,
   chooseTimer: PropTypes.func,
   updateSetTimers: PropTypes.func
@@ -189,7 +204,8 @@ const mapStateToProps = (state) => {
   return {
     sessionLength: state.data.sessionLength,
     breakLength: state.data.breakLength,
-    savedTimers: state.data.savedTimers
+    savedTimers: state.data.savedTimers,
+    statistics: state.data.statistics
   };
 }
 
