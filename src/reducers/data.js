@@ -91,12 +91,16 @@ export default function (state = INIT_STATE, action) {
         savedTimers: action.payload
       };
     case SAVE_OLD_POMODORO:
+      const originalLength = state.currentTimer === 'session'
+        ? 'currentSessionLength'
+        : 'currentBreakLength';
+
       return {
         ...state,
         statistics: [...state.statistics, {
           id: Date.now(),
           type: state.currentTimer,
-          length: state.runningTime,
+          length: state[originalLength] - state.runningTime,
           start: state.pomodoroStart,
           end: state.pomodoroEnd
         }]
