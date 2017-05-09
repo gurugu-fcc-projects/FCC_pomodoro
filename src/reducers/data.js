@@ -7,6 +7,7 @@ import {
   RESET_ALL,
   CHOOSE_TIMER,
   UPDATE_SET_TIMERS,
+  SAVE_OLD_POMODOROS
 } from '../actions/types';
 
 const INIT_STATE = {
@@ -33,7 +34,8 @@ const INIT_STATE = {
       session: 45,
       break: 10
     }
-  ]
+  ],
+  oldPomodoros: []
 };
 
 export default function (state = INIT_STATE, action) {
@@ -83,6 +85,15 @@ export default function (state = INIT_STATE, action) {
       return {
         ...state,
         savedTimers: action.payload
+      };
+    case SAVE_OLD_POMODOROS:
+      console.log(state.oldPomodoros);
+      return {
+        ...state,
+        oldPomodoros: [...state.oldPomodoros, {
+          type: action.payload.type,
+          length: action.payload.length
+        }]
       };
     default:
       return state;

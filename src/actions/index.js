@@ -6,7 +6,8 @@ import {
   CHANGE_RUNTIME,
   RESET_ALL,
   CHOOSE_TIMER,
-  UPDATE_SET_TIMERS
+  UPDATE_SET_TIMERS,
+  SAVE_OLD_POMODOROS
 } from './types';
 
 export const startStopTimer = (runState) => {
@@ -70,5 +71,13 @@ export const updateSetTimers = (newTimers) => {
   return {
     type: UPDATE_SET_TIMERS,
     payload: newTimers
+  };
+}
+
+export const saveOldPomodoros = (type) => {
+  const length = type === 'session' ? 'currentSessionLength' : 'currentBreakLength';
+  return {
+    type: SAVE_OLD_POMODOROS,
+    payload: {type, length}
   };
 }
