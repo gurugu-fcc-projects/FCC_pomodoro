@@ -8,7 +8,8 @@ import {
   CHOOSE_TIMER,
   UPDATE_SET_TIMERS,
   SAVE_OLD_POMODORO,
-  SAVE_START_TIME
+  SAVE_START_TIME,
+  SAVE_END_TIME
 } from '../actions/types';
 
 const INIT_STATE = {
@@ -37,7 +38,8 @@ const INIT_STATE = {
     }
   ],
   statistics: [],
-  pomodoroStart: 0
+  pomodoroStart: '',
+  pomodoroEnd: ''
 };
 
 export default function (state = INIT_STATE, action) {
@@ -94,14 +96,15 @@ export default function (state = INIT_STATE, action) {
         statistics: [...state.statistics, {
           id: Date.now(),
           type: action.payload.type,
-          length: state[action.payload.length]
+          length: state[action.payload.length],
+          start: state.pomodoroStart,
+          end: state.pomodoroEnd
         }]
       };
-    case SAVE_START_TIME: {
-      return {
-        ...state, pomodoroStart: action.payload
-      }
-    }
+    case SAVE_START_TIME:
+      return { ...state, pomodoroStart: action.payload };
+    case SAVE_END_TIME:
+      return { ...state, pomodoroEnd: action.payload };
     default:
       return state;
   }

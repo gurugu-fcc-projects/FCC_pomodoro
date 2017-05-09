@@ -8,7 +8,8 @@ import {
   CHOOSE_TIMER,
   UPDATE_SET_TIMERS,
   SAVE_OLD_POMODORO,
-  SAVE_START_TIME
+  SAVE_START_TIME,
+  SAVE_END_TIME
 } from './types';
 
 export const startStopTimer = (runState) => {
@@ -86,6 +87,13 @@ export const saveOldPomodoro = (type) => {
 export const saveStartTime = (time) => {
   return {
     type: SAVE_START_TIME,
+    payload: time
+  };
+}
+
+export const saveEndTime = (time) => {
+  return {
+    type: SAVE_END_TIME,
     payload: time
   };
 }

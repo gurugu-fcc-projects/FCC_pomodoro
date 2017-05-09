@@ -8,3 +8,4 @@ export const CHOOSE_TIMER = 'choose_timer';
 export const UPDATE_SET_TIMERS = 'update_set_timers';
 export const SAVE_OLD_POMODORO = 'save_old_pomodoros';
 export const SAVE_START_TIME = 'save_start_time';
+export const SAVE_END_TIME = 'save_end_time';

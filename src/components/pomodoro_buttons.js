@@ -17,6 +17,9 @@ class PomodoroButtons extends Component {
     } = this.props;
     /* helper = stop timer */
     const stopTimer = () => {
+      const currentDate = new Date();
+
+      this.props.saveEndTime(currentDate.toLocaleTimeString('en-US', {hour12: false}));
       this.props.startStopTimer('stop');
       window.clearInterval(timer);
     }
@@ -28,7 +31,9 @@ class PomodoroButtons extends Component {
     }
     /* helper = start timer */
     const startTimer = () => {
-      this.props.saveStartTime(Date.now());
+      const currentDate = new Date();
+
+      this.props.saveStartTime(currentDate.toLocaleTimeString('en-US', {hour12: false}));
       this.props.startStopTimer('start');
       timer = window.setInterval(countdown, 1000);
     }
@@ -72,7 +77,9 @@ PomodoroButtons.propTypes = {
   runTimer: PropTypes.func,
   changeTimer: PropTypes.func,
   resetAll: PropTypes.func,
-  saveOldPomodoro: PropTypes.func
+  saveOldPomodoro: PropTypes.func,
+  saveStartTime: PropTypes.func,
+  saveEndTime: PropTypes.func
 }
 
 const mapStateToProps = (state) => {

@@ -145,6 +145,8 @@ class PomodoroSettings extends Component {
         <div key={pomodoro.id}>
           <div>Timer: {pomodoro.type}</div>
           <div>Length: {pomodoro.length}</div>
+          <div>Start: {pomodoro.start}</div>
+          <div>End: {pomodoro.end}</div>
         </div>
       );
     });

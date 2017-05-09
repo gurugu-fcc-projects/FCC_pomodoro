@@ -8,7 +8,8 @@ import {
   CHOOSE_TIMER,
   UPDATE_SET_TIMERS,
   SAVE_OLD_POMODORO,
-  SAVE_START_TIME
+  SAVE_START_TIME,
+  SAVE_END_TIME
 } from '../../src/actions/types';
 
 import {
@@ -22,7 +23,8 @@ import {
   updateSetTimers,
   saveTimer,
   saveOldPomodoro,
-  saveStartTime
+  saveStartTime,
+  saveEndTime
 } from '../../src/actions/index';
 
 describe('startStopTimer', () => {
@@ -139,5 +141,12 @@ describe('saveStartTime', () => {
   it('save pomodoro start time', () => {
     const actionObject = {type: SAVE_START_TIME, payload: 100000};
     expect(saveStartTime(100000)).toEqual(actionObject);
+  });
+});
+
+describe('saveEndTime', () => {
+  it('save pomodoro end time', () => {
+    const actionObject = {type: SAVE_END_TIME, payload: 100000};
+    expect(saveEndTime(100000)).toEqual(actionObject);
   });
 });
