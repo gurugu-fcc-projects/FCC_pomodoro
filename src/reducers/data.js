@@ -95,8 +95,8 @@ export default function (state = INIT_STATE, action) {
         ...state,
         statistics: [...state.statistics, {
           id: Date.now(),
-          type: action.payload.type,
-          length: state[action.payload.length],
+          type: state.currentTimer,
+          length: state.runningTime,
           start: state.pomodoroStart,
           end: state.pomodoroEnd
         }]

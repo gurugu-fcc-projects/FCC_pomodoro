@@ -48,7 +48,7 @@ class PomodoroButtons extends Component {
     const nextTimer = () => {
       stopTimer();
       if (pomodoroStart) {
-        this.props.saveOldPomodoro(currentTimer);
+        this.props.saveOldPomodoro();
       }
       this.props.changeTimer(currentTimer, currentSessionLength, currentBreakLength);
       startTimer();

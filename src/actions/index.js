@@ -76,11 +76,9 @@ export const updateSetTimers = (newTimers) => {
   };
 }
 
-export const saveOldPomodoro = (type) => {
-  const length = type === 'session' ? 'currentSessionLength' : 'currentBreakLength';
+export const saveOldPomodoro = () => {
   return {
-    type: SAVE_OLD_POMODORO,
-    payload: {type, length}
+    type: SAVE_OLD_POMODORO
   };
 }
 
