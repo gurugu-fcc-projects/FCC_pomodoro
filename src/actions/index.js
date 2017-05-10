@@ -4,11 +4,10 @@ import {
   COUNT_FORWARDS,
   CHANGE_TIMER,
   CHANGE_TIMER_LENGTH,
-  // CHANGE_RUNTIME,
   RESET_ALL,
   CHOOSE_TIMER,
   UPDATE_SET_TIMERS,
-  SAVE_OLD_POMODORO,
+  SAVE_TIMER_DATA,
   SAVE_START_TIME,
   SAVE_END_TIME
 } from './types';
@@ -54,13 +53,6 @@ export const changeTimerLength = (timer, newValue) => {
   };
 }
 
-// export const changeRunningTime = (newRunningTime) => {
-//   return {
-//     type: CHANGE_RUNTIME,
-//     payload: newRunningTime
-//   };
-// }
-
 export const resetAll = () => {
   return {
     type: RESET_ALL
@@ -84,9 +76,9 @@ export const updateSetTimers = (newTimers) => {
   };
 }
 
-export const saveOldPomodoro = () => {
+export const saveTimerData = () => {
   return {
-    type: SAVE_OLD_POMODORO
+    type: SAVE_TIMER_DATA
   };
 }
 

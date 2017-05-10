@@ -4,11 +4,10 @@ import {
   COUNT_FORWARDS,
   CHANGE_TIMER,
   CHANGE_TIMER_LENGTH,
-  // CHANGE_RUNTIME,
   RESET_ALL,
   CHOOSE_TIMER,
   UPDATE_SET_TIMERS,
-  SAVE_OLD_POMODORO,
+  SAVE_TIMER_DATA,
   SAVE_START_TIME,
   SAVE_END_TIME
 } from '../actions/types';
@@ -29,8 +28,8 @@ const INIT_STATE = {
     {id: 3, session: 45, break: 10}
   ],
   statistics: [],
-  pomodoroStart: '',
-  pomodoroEnd: ''
+  timerStart: '',
+  timerEnd: ''
 };
 
 export default function (state = INIT_STATE, action) {
@@ -57,6 +56,7 @@ export default function (state = INIT_STATE, action) {
         ...state,
         currentTimer: action.payload.timer,
         timeBackwards: action.payload.runningTime,
+        timeForwards: 0,
         displayedCount: action.payload.runningTime
       };
     case CHANGE_TIMER_LENGTH:
@@ -64,11 +64,6 @@ export default function (state = INIT_STATE, action) {
         ...state,
         [action.payload.length]: action.payload.newValue
       };
-    // case CHANGE_RUNTIME:
-    //   return {
-    //     ...state,
-    //     timeBackwards: action.payload
-    //   };
     case RESET_ALL:
       return {
         ...state,
@@ -91,7 +86,7 @@ export default function (state = INIT_STATE, action) {
         ...state,
         savedTimers: action.payload
       };
-    case SAVE_OLD_POMODORO:
+    case SAVE_TIMER_DATA:
       const originalLength = state.currentTimer === 'session'
         ? 'currentSessionLength'
         : 'currentBreakLength';
@@ -104,19 +99,19 @@ export default function (state = INIT_STATE, action) {
           length: (state[originalLength] - state.timeBackwards) + state.timeForwards,
           planned: state[originalLength] - state.timeBackwards,
           overdue: state.timeForwards,
-          start: state.pomodoroStart,
-          end: state.pomodoroEnd
+          start: state.timerStart,
+          end: state.timerEnd
         }]
       };
     case SAVE_START_TIME:
       return {
         ...state,
-        pomodoroStart: action.payload
+        timerStart: action.payload
       };
     case SAVE_END_TIME:
       return {
         ...state,
-        pomodoroEnd: action.payload
+        timerEnd: action.payload
       };
     default:
       return state;

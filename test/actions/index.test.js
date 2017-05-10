@@ -4,11 +4,10 @@ import {
   COUNT_FORWARDS,
   CHANGE_TIMER,
   CHANGE_TIMER_LENGTH,
-  // CHANGE_RUNTIME,
   RESET_ALL,
   CHOOSE_TIMER,
   UPDATE_SET_TIMERS,
-  SAVE_OLD_POMODORO,
+  SAVE_TIMER_DATA,
   SAVE_START_TIME,
   SAVE_END_TIME
 } from '../../src/actions/types';
@@ -19,12 +18,11 @@ import {
   countForwards,
   changeTimer,
   changeTimerLength,
-  // changeRunningTime,
   resetAll,
   chooseTimer,
   updateSetTimers,
   saveTimer,
-  saveOldPomodoro,
+  saveTimerData,
   saveStartTime,
   saveEndTime
 } from '../../src/actions/index';
@@ -102,17 +100,6 @@ describe('changeTimerLength', () => {
   });
 });
 
-// describe('changeRunningTime', () => {
-//   it('changes current runningTime from SESSION to BREAK', () => {
-//     const actionObject = {type: CHANGE_RUNTIME, payload: 5};
-//     expect(changeRunningTime(5)).toEqual(actionObject);
-//   });
-//   it('changes current runningTime from BREAK to SESSION', () => {
-//     const actionObject = {type: CHANGE_RUNTIME, payload: 25};
-//     expect(changeRunningTime(25)).toEqual(actionObject);
-//   });
-// })
-
 describe('resetAll', () => {
   it('resets to initial state', () => {
     const actionObject = {type: RESET_ALL};
@@ -138,22 +125,22 @@ describe('updateSetTimers', () => {
   });
 });
 
-describe('saveOldPomodoro', () => {
-  it('sends data of the passed pomodoro', () => {
-    const actionObject = {type: SAVE_OLD_POMODORO};
-    expect(saveOldPomodoro()).toEqual(actionObject);
+describe('saveTimerData', () => {
+  it('sends data of previous timer', () => {
+    const actionObject = {type: SAVE_TIMER_DATA};
+    expect(saveTimerData()).toEqual(actionObject);
   });
 });
 
 describe('saveStartTime', () => {
-  it('save pomodoro start time', () => {
+  it('save timer start time', () => {
     const actionObject = {type: SAVE_START_TIME, payload: 100000};
     expect(saveStartTime(100000)).toEqual(actionObject);
   });
 });
 
 describe('saveEndTime', () => {
-  it('save pomodoro end time', () => {
+  it('save timer end time', () => {
     const actionObject = {type: SAVE_END_TIME, payload: 100000};
     expect(saveEndTime(100000)).toEqual(actionObject);
   });

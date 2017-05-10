@@ -177,5 +177,9 @@
 ======================*/
 
 .statistics {
-  color: #000;
+  color: #606060;
+}
+
+.statistics h3 {
+  text-align: center;
 }

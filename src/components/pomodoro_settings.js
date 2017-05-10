@@ -128,12 +128,13 @@ class PomodoroSettings extends Component {
     const statisticsList = statistics.map((pomodoro) => {
       return (
         <div key={pomodoro.id}>
-          <div>Timer: {pomodoro.type}</div>
+
+          {/* <div>Timer: {pomodoro.type}</div>
           <div>Length: {showTime(pomodoro.length)}</div>
           <div>Planned: {showTime(pomodoro.planned)}</div>
           <div>Overdue: {showTime(pomodoro.overdue)}</div>
           <div>Start: {pomodoro.start}</div>
-          <div>End: {pomodoro.end}</div>
+          <div>End: {pomodoro.end}</div> */}
         </div>
       );
     });
@@ -142,11 +143,11 @@ class PomodoroSettings extends Component {
       <div>
         <div className="modal">
         </div>
-        <div className="settings">
-          <div className="saved-timers">
+        <aside className="settings">
+          <section className="saved-timers">
             {savedTimersList}
-          </div>
-          <div className="set-timers">
+          </section>
+          <section className="set-timers">
             <div className="set-timer">
               <div className="set-timer-title">SESSION</div>
               <div className="set-timer-button session-decrease">
@@ -168,12 +169,12 @@ class PomodoroSettings extends Component {
               </div>
             </div>
             <div className="set-timers-button-save" onClick={saveTimer}>SAVE</div>
-          </div>
-          <div className="statistics">
+          </section>
+          <section className="statistics">
             <h3>STATISTICS</h3>
             {statisticsList}
-          </div>
-        </div>
+          </section>
+        </aside>
       </div>
     );
   }
