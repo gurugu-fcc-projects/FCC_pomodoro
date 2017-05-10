@@ -130,6 +130,8 @@ class PomodoroSettings extends Component {
         <div key={pomodoro.id}>
           <div>Timer: {pomodoro.type}</div>
           <div>Length: {showTime(pomodoro.length)}</div>
+          <div>Planned: {showTime(pomodoro.planned)}</div>
+          <div>Overdue: {showTime(pomodoro.overdue)}</div>
           <div>Start: {pomodoro.start}</div>
           <div>End: {pomodoro.end}</div>
         </div>

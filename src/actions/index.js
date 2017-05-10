@@ -1,9 +1,10 @@
 import {
   START_STOP_TIMER,
-  RUN_TIMER,
+  COUNT_BACKWARDS,
+  COUNT_FORWARDS,
   CHANGE_TIMER,
   CHANGE_TIMER_LENGTH,
-  CHANGE_RUNTIME,
+  // CHANGE_RUNTIME,
   RESET_ALL,
   CHOOSE_TIMER,
   UPDATE_SET_TIMERS,
@@ -19,10 +20,17 @@ export const startStopTimer = (runState) => {
   };
 }
 
-export const runTimer = (runningTime) => {
+export const countBackwards = (timeBackwards) => {
   return {
-    type: RUN_TIMER,
-    payload: runningTime - 1
+    type: COUNT_BACKWARDS,
+    payload: timeBackwards - 1
+  };
+}
+
+export const countForwards = (timeForwards) => {
+  return {
+    type: COUNT_FORWARDS,
+    payload: timeForwards + 1
   };
 }
 
@@ -46,12 +54,12 @@ export const changeTimerLength = (timer, newValue) => {
   };
 }
 
-export const changeRunningTime = (newRunningTime) => {
-  return {
-    type: CHANGE_RUNTIME,
-    payload: newRunningTime
-  };
-}
+// export const changeRunningTime = (newRunningTime) => {
+//   return {
+//     type: CHANGE_RUNTIME,
+//     payload: newRunningTime
+//   };
+// }
 
 export const resetAll = () => {
   return {

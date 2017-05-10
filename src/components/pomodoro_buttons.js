@@ -32,7 +32,7 @@ class PomodoroButtons extends Component {
 
       if (this.props.isRunning === false) {
         stopTimer();
-      } else if (this.props.runningTime <= 0) {
+      } else if (this.props.timeBackwards <= 0) {
         this.props.countForwards(this.props.timeForwards);
       } else {
         this.props.countBackwards(this.props.timeBackwards);
@@ -81,12 +81,14 @@ class PomodoroButtons extends Component {
 PomodoroButtons.propTypes = {
   currentSessionLength: PropTypes.number,
   currentBreakLength: PropTypes.number,
-  runningTime: PropTypes.number,
+  timeBackwards: PropTypes.number,
+  timeForwards: PropTypes.number,
   isRunning: PropTypes.bool,
   currentTimer: PropTypes.string,
   pomodoroStart: PropTypes.string,
   startStopTimer: PropTypes.func,
-  runTimer: PropTypes.func,
+  countBackwards: PropTypes.func,
+  countForwards: PropTypes.func,
   changeTimer: PropTypes.func,
   resetAll: PropTypes.func,
   saveOldPomodoro: PropTypes.func,
@@ -98,7 +100,8 @@ const mapStateToProps = (state) => {
   return {
     currentSessionLength: state.data.currentSessionLength,
     currentBreakLength: state.data.currentBreakLength,
-    runningTime: state.data.runningTime,
+    timeBackwards: state.data.timeBackwards,
+    timeForwards: state.data.timeForwards,
     isRunning: state.data.isRunning,
     currentTimer: state.data.currentTimer,
     pomodoroStart: state.data.pomodoroStart

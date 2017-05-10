@@ -1,9 +1,10 @@
 import {
   START_STOP_TIMER,
-  RUN_TIMER,
+  COUNT_BACKWARDS,
+  COUNT_FORWARDS,
   CHANGE_TIMER,
   CHANGE_TIMER_LENGTH,
-  CHANGE_RUNTIME,
+  // CHANGE_RUNTIME,
   RESET_ALL,
   CHOOSE_TIMER,
   UPDATE_SET_TIMERS,
@@ -14,10 +15,11 @@ import {
 
 import {
   startStopTimer,
-  runTimer,
+  countBackwards,
+  countForwards,
   changeTimer,
   changeTimerLength,
-  changeRunningTime,
+  // changeRunningTime,
   resetAll,
   chooseTimer,
   updateSetTimers,
@@ -38,10 +40,17 @@ describe('startStopTimer', () => {
   });
 });
 
-describe('runTimer', () => {
+describe('countBackwards', () => {
   it('returns a number minus one', () => {
-    const actionObject = {type: RUN_TIMER, payload: 9};
-    expect(runTimer(10)).toEqual(actionObject);
+    const actionObject = {type: COUNT_BACKWARDS, payload: 9};
+    expect(countBackwards(10)).toEqual(actionObject);
+  });
+});
+
+describe('countForwards', () => {
+  it('returns a number minus one', () => {
+    const actionObject = {type: COUNT_FORWARDS, payload: 11};
+    expect(countForwards(10)).toEqual(actionObject);
   });
 });
 
@@ -93,16 +102,16 @@ describe('changeTimerLength', () => {
   });
 });
 
-describe('changeRunningTime', () => {
-  it('changes current runningTime from SESSION to BREAK', () => {
-    const actionObject = {type: CHANGE_RUNTIME, payload: 5};
-    expect(changeRunningTime(5)).toEqual(actionObject);
-  });
-  it('changes current runningTime from BREAK to SESSION', () => {
-    const actionObject = {type: CHANGE_RUNTIME, payload: 25};
-    expect(changeRunningTime(25)).toEqual(actionObject);
-  });
-})
+// describe('changeRunningTime', () => {
+//   it('changes current runningTime from SESSION to BREAK', () => {
+//     const actionObject = {type: CHANGE_RUNTIME, payload: 5};
+//     expect(changeRunningTime(5)).toEqual(actionObject);
+//   });
+//   it('changes current runningTime from BREAK to SESSION', () => {
+//     const actionObject = {type: CHANGE_RUNTIME, payload: 25};
+//     expect(changeRunningTime(25)).toEqual(actionObject);
+//   });
+// })
 
 describe('resetAll', () => {
   it('resets to initial state', () => {
@@ -131,9 +140,8 @@ describe('updateSetTimers', () => {
 
 describe('saveOldPomodoro', () => {
   it('sends data of the passed pomodoro', () => {
-    const actionObject = {type: SAVE_OLD_POMODORO, payload:
-      {type: 'session', length: 'currentSessionLength'}};
-    expect(saveOldPomodoro('session')).toEqual(actionObject);
+    const actionObject = {type: SAVE_OLD_POMODORO};
+    expect(saveOldPomodoro()).toEqual(actionObject);
   });
 });
 
