@@ -12,6 +12,8 @@ import {
   SAVE_END_TIME
 } from '../actions/types';
 
+import { testData } from '../utils/common';
+
 const INIT_STATE = {
   currentSessionLength: 1500,
   currentBreakLength: 300,
@@ -27,7 +29,7 @@ const INIT_STATE = {
     {id: 2, session: 30, break: 5},
     {id: 3, session: 45, break: 10}
   ],
-  statistics: [],
+  statistics: [...testData],
   timerStart: '',
   timerEnd: ''
 };

@@ -162,6 +162,8 @@
 
 .statistics {
   color: #606060;
+  overflow-y: scroll;
+  flex: 0 1 40%;
 }
 
 .statistics-title {
