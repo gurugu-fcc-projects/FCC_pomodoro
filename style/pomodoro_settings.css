@@ -55,15 +55,18 @@
 .saved-timers {
   display: flex;
   flex-wrap: wrap;
+  /*align-items: flex-start;
+  flex: 0 0 30%;*/
   color: #000;
 }
 
 .saved-timer {
-  background-color: hsla(360, 1%, 81%, 1);
   display: flex;
   justify-content: space-between;
+  background-color: hsla(360, 1%, 81%, 1);
   box-shadow: 2px 2px 3px #3f3f3f;
   width: 70px;
+  /*height: 25px;*/
   margin: 5px;
   cursor: pointer;
   transition: box-shadow 0.2s, background-color 0.2s;

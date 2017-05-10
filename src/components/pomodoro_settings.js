@@ -103,7 +103,11 @@ class PomodoroSettings extends Component {
         break: breakLength
       };
 
-      this.props.updateSetTimers([...savedTimers, newTimer]);
+      if (savedTimers.length < 12) {
+        this.props.updateSetTimers([...savedTimers, newTimer]);
+      } else {
+        console.log('Maximum number of timers reached!');
+      }
     }
 
     const savedTimersList = savedTimers.map((timer) => {
