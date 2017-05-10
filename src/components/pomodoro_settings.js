@@ -125,16 +125,27 @@ class PomodoroSettings extends Component {
       );
     });
 
+    const overdueTime = (pomodoro) => {
+      return pomodoro.overdue > 0
+        ? <div>({showTime(pomodoro.planned)}/<span>{showTime(pomodoro.overdue)}</span>)</div>
+        : '';
+    }
+
     const statisticsList = statistics.map((pomodoro) => {
       return (
-        <div key={pomodoro.id}>
-
-          {/* <div>Timer: {pomodoro.type}</div>
-          <div>Length: {showTime(pomodoro.length)}</div>
-          <div>Planned: {showTime(pomodoro.planned)}</div>
-          <div>Overdue: {showTime(pomodoro.overdue)}</div>
-          <div>Start: {pomodoro.start}</div>
-          <div>End: {pomodoro.end}</div> */}
+        <div key={pomodoro.id} className="statistics-timer">
+          <div className="statistics-timer-main">
+            <span>{pomodoro.type}</span>
+            <span>{pomodoro.start}  -  {pomodoro.end}</span>
+          </div>
+          <div className="statistics-timer-sub">
+            <span>
+              {showTime(pomodoro.length)}
+            </span>
+            <span>
+              {overdueTime(pomodoro)}
+            </span>
+          </div>
         </div>
       );
     });
@@ -171,7 +182,7 @@ class PomodoroSettings extends Component {
             <div className="set-timers-button-save" onClick={saveTimer}>SAVE</div>
           </section>
           <section className="statistics">
-            <h3>STATISTICS</h3>
+            <h3 className="statistics-title">STATISTICS</h3>
             {statisticsList}
           </section>
         </aside>
