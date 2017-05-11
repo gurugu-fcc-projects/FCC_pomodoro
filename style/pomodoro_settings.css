@@ -56,7 +56,7 @@
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
-  flex: 0 0 15%;
+  flex: 0 0 auto;
   color: #000;
 }
 
@@ -107,6 +107,7 @@
 
 .set-timers {
   color: #606060;
+  flex: 0 0 15%;
 }
 
 .set-timer {
@@ -166,11 +167,13 @@
 .statistics {
   color: #606060;
   overflow-y: scroll;
-  /*flex: 0 1 40%;*/
+  padding-right: 10px;
 }
 
 .statistics-title {
+  color: #606060;
   text-align: center;
+  margin-bottom: 0;
 }
 
 .statistics-timer {

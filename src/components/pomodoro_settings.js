@@ -185,9 +185,11 @@ class PomodoroSettings extends Component {
             </div>
             <div className="set-timers-button-save" onClick={saveTimer}>SAVE</div>
           </section>
+          <h3 className="statistics-title">STATISTICS</h3>
           <section className="statistics">
-            <h3 className="statistics-title">STATISTICS</h3>
-            {statisticsList}
+            <div className="statistics-inside">
+              {statisticsList}
+            </div>
           </section>
         </aside>
       </div>
