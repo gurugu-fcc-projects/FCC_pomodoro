@@ -13,18 +13,7 @@ body {
   margin: 0;
 }
 
-button {
-  cursor: pointer;
-}
-
-.pomodoro {
+.app {
   color: hsla(360, 100%, 100%, 1);
   /*height: 100vh;*/
-}
-
-.pomodoro-main {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
