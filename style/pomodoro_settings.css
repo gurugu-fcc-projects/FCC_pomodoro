@@ -24,6 +24,7 @@
 ======================*/
 
 .settings {
+  background-color: hsla(16, 55%, 85%, 1);
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -31,9 +32,9 @@
   top: 0; right: 0;
   z-index: 2;
   transform: translateX(260px);
-  background-color: hsla(200, 40%, 40%, 1);
+  /*background-color: hsla(200, 40%, 40%, 1);
   background-color: #F9C997;
-  background-color: #e4e4e4;
+  background-color: #e4e4e4;*/
   height: 100%; width: 260px;
   transition: transform .4s;
 }
