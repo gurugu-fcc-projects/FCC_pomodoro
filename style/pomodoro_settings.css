@@ -166,7 +166,7 @@
 .statistics {
   color: #606060;
   overflow-y: scroll;
-  flex: 0 1 40%;
+  /*flex: 0 1 40%;*/
 }
 
 .statistics-title {
@@ -186,11 +186,12 @@
 }
 
 .statistics-timer-main span:nth-child(1) {
-  flex: 0 0 45%;
+  flex: 0 0 40%;
 }
 
 .statistics-timer-main span:nth-child(2) {
-  flex: 0 0 55%;
+  flex: 0 0 60%;
+  text-align: right;
 }
 
 .statistics-timer-sub {
