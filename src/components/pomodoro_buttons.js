@@ -68,10 +68,12 @@ class PomodoroButtons extends Component {
     }
 
     return (
-      <div className="buttons">
-        <button onClick={toggleTimer}>{this.props.isRunning ? 'STOP' : 'START'}</button>
-        <button onClick={nextTimer}>NEXT</button>
-        <button onClick={resetAll}>RESET</button>
+      <div>
+        <div className="buttons">
+          <div className="button" onClick={toggleTimer}>{this.props.isRunning ? 'STOP' : 'START'}</div>
+          <div className="button" onClick={nextTimer}>NEXT</div>
+          <div className="button" onClick={resetAll}>RESET</div>
+        </div>
         <div className="button-settings" onClick={showHideSettings}><i className="fa fa-cog"></i></div>
       </div>
     );

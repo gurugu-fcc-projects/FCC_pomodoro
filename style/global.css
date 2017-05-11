@@ -19,5 +19,12 @@ button {
 
 .pomodoro {
   color: hsla(360, 100%, 100%, 1);
+  /*height: 100vh;*/
+}
+
+.pomodoro-main {
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
