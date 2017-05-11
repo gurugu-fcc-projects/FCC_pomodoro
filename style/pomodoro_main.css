@@ -1,0 +1,18 @@
+.pomodoro {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pomodoro-main {
+  display: flex;
+  flex-direction: column;
+  margin: auto 0;
+}
+
+.footer {
+  font-size: 0.6em;
+  margin-bottom: 5px;
+}

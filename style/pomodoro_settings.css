@@ -24,7 +24,7 @@
 ======================*/
 
 .settings {
-  background-color: hsla(16, 55%, 85%, 1);
+  /*background-color: hsla(16, 55%, 85%, 1);*/
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -58,7 +58,7 @@
   flex-wrap: wrap;
   align-content: flex-start;
   flex: 0 0 auto;
-  color: #000;
+  /*color: #000;*/
 }
 
 .saved-timer {
@@ -107,7 +107,7 @@
 ======================*/
 
 .set-timers {
-  color: #606060;
+  /*color: #606060;*/
   flex: 0 0 15%;
 }
 
@@ -124,17 +124,17 @@
 }
 
 .set-timer-button i {
-  color: hsla(360, 1%, 78%, 1);
+  /*color: hsla(360, 1%, 78%, 1);*/
   font-size: 2.5em;
   transition: color .2s;
 }
 
 .set-timer-button i:hover {
-  color: hsla(360, 1%, 71%, 1);
+  /*color: hsla(360, 1%, 71%, 1);*/
 }
 
 .set-timer-button i:active {
-  color: hsla(360, 1%, 67%, 1);
+  /*color: hsla(360, 1%, 67%, 1);*/
 }
 
 .set-timer-value {
@@ -167,13 +167,13 @@
 ======================*/
 
 .statistics {
-  color: #606060;
+  /*color: #606060;*/
   overflow-y: scroll;
   padding-right: 10px;
 }
 
 .statistics-title {
-  color: #606060;
+  /*color: #606060;*/
   text-align: center;
   margin-bottom: 0;
 }

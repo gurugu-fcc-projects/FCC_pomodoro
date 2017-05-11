@@ -9,7 +9,8 @@ body {
   font-family: 'Droid Sans', sans-serif;
   font-family: 'Muli', sans-serif;
   font-family: 'Nunito', sans-serif;*/
-  background-color: hsla(16, 75%, 55%, 0.7);
+  /*background-color: hsla(16, 75%, 55%, 0.7);*/
+  /*background: #2196F3;*/
   margin: 0;
 }
 
@@ -17,3 +18,15 @@ body {
   color: hsla(360, 100%, 100%, 1);
   /*height: 100vh;*/
 }
+
+
+
+.dark-primary-color    { background: #1976D2; }
+.default-primary-color { background: #2196F3; }
+.light-primary-color   { background: #BBDEFB; }
+.text-primary-color    { color: #FFFFFF; }
+.accent-color          { background: #9E9E9E; }
+.primary-text-color    { color: #212121; }
+.secondary-text-color  { color: #757575; }
+.divider-color         { border-color: #BDBDBD; }
+.settings-color        { background: #fff; }

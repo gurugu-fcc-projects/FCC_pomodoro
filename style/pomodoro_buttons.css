@@ -6,11 +6,11 @@
 }
 
 .button {
-  background-color: hsla(16, 75%, 55%, 0.2);
+  /*background-color: hsla(16, 75%, 55%, 0.2);*/
   color: inherit;
   height: 70px; width: 70px;
   padding: 10px;
-  border: 1px solid #fff;
+  border: 1px solid;
   border-radius: 100%;
   margin: 5px;
   line-height: 70px;
@@ -24,11 +24,11 @@
 }
 
 .button:hover {
-  background-color: hsla(16, 75%, 55%, 0.7);
+  /*background-color: hsla(16, 75%, 55%, 0.7);*/
 }
 
 .button:active {
-  background-color: hsla(16, 75%, 55%, 0.9);
+  /*background-color: hsla(16, 75%, 55%, 0.9);*/
 }
 
 .button-settings {
@@ -40,8 +40,8 @@
   transition: color .3s;
 }
 .button-settings:hover {
-  color: hsla(16, 95%, 35%, 1);
+  /*color: hsla(16, 95%, 35%, 1);*/
 }
 .button-settings:active {
-  color: hsla(16, 95%, 15%, 1);
+  /*color: hsla(16, 95%, 15%, 1);*/
 }
