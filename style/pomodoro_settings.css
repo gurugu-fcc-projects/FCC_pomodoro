@@ -76,7 +76,8 @@
   /*background-color: hsla(360, 1%, 81%, 1);*/
   /*background-color: #fff;
   color: #2196F3;*/
-  background-color: #1976D2;
+  /*background-color: #1976D2;*/
+  background-color: hsla(210, 79%, 46%, 1);
   color: #fff;
   /*box-shadow: 2px 2px 3px #3f3f3f;*/
   /*width: 70px;*/
@@ -86,10 +87,14 @@
 }
 
 .saved-timer:hover {
+  background-color: hsla(210, 79%, 38%, 1);
+  /*background-color: hsla(207, 89.7%, 54.1%, 1);*/
   /*background-color: hsla(360, 1%, 71%, 1);*/
 }
 
 .saved-timer.selected {
+  background-color: hsla(210, 79%, 33%, 1);
+  /*background-color: hsla(207, 89.7%, 34.1%, 1);*/
   /*background-color: hsla(360, 1%, 71%, 1);*/
   /*box-shadow: .5px .5px 0 #3f3f3f;*/
 }
