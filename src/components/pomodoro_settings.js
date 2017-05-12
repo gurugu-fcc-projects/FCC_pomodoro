@@ -158,7 +158,7 @@ class PomodoroSettings extends Component {
       <div>
         <div className="modal">
         </div>
-        <aside className="settings settings-color primary-text-color">
+        <aside className="settings default-primary-color text-primary-color">
           <section className="saved-timers">
             {savedTimersList}
           </section>
@@ -166,27 +166,27 @@ class PomodoroSettings extends Component {
             <div className="set-timer">
               <div className="set-timer-title">SESSION</div>
               <div className="set-timer-button session-decrease">
-                <i className="fa fa-minus-circle secondary-text-color"></i>
+                <i className="fa fa-minus-circle"></i>
               </div>
               <div className="set-timer-value">{sessionLength}</div>
               <div className="set-timer-button session-increase">
-                <i className="fa fa-plus-circle secondary-text-color"></i>
+                <i className="fa fa-plus-circle"></i>
               </div>
             </div>
             <div className="set-timer">
               <div className="set-timer-title">BREAK</div>
               <div className="set-timer-button break-decrease">
-                <i className="fa fa-minus-circle secondary-text-color"></i>
+                <i className="fa fa-minus-circle"></i>
               </div>
               <div className="set-timer-value">{breakLength}</div>
               <div className="set-timer-button break-increase">
-                <i className="fa fa-plus-circle secondary-text-color"></i>
+                <i className="fa fa-plus-circle"></i>
               </div>
             </div>
             <div className="set-timers-button-save" onClick={saveTimer}>SAVE</div>
           </section>
           <h3 className="statistics-title">STATISTICS</h3>
-          <section className="statistics secondary-text-color">
+          <section className="statistics">
             <div className="statistics-inside">
               {statisticsList}
             </div>

@@ -8,7 +8,7 @@ import '../../style/global.css';
 export default class App extends Component {
   render() {
     return (
-      <div className="app default-primary-color">
+      <div className="app dark-primary-color">
         <PomodoroMain />
         <PomodoroSettings />
       </div>
