@@ -158,7 +158,7 @@ class PomodoroSettings extends Component {
       <div>
         <div className="modal">
         </div>
-        <aside className="settings default-primary-color text-primary-color">
+        <aside className="settings">
           <section className="saved-timers">
             {savedTimersList}
           </section>

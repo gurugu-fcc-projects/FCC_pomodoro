@@ -25,6 +25,11 @@
 
 .settings {
   /*background-color: hsla(16, 55%, 85%, 1);*/
+  /*background: #2196F3;
+  color: #FFFFFF;*/
+  background: #E0E0E0;
+  color: #2196F3;
+  color: #1976D2;
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -69,8 +74,10 @@
   flex: 0 0 29%;
   /*align-self: flex-start;*/
   /*background-color: hsla(360, 1%, 81%, 1);*/
-  background-color: #fff;
-  color: #2196F3;
+  /*background-color: #fff;
+  color: #2196F3;*/
+  background-color: #1976D2;
+  color: #fff;
   /*box-shadow: 2px 2px 3px #3f3f3f;*/
   /*width: 70px;*/
   margin: 5px;
@@ -153,7 +160,7 @@
 .set-timers-button-save {
   /*background-color: hsla(360, 1%, 78%, 1);*/
   padding: 10px 0;
-  border: 1px solid #fff;
+  border: 1px solid #1976D2;
   margin-top: 15px;
   text-align: center;
   font-size: 1.3em;
@@ -162,11 +169,11 @@
 }
 
 .set-timers-button-save:hover {
-  background-color: hsla(360, 1%, 71%, 1);
+  /*background-color: hsla(360, 1%, 71%, 1);*/
 }
 
 .set-timers-button-save:active {
-  background-color: hsla(360, 1%, 67%, 1);
+  /*background-color: hsla(360, 1%, 67%, 1);*/
 }
 
 /*======================
@@ -174,6 +181,7 @@
 ======================*/
 
 .statistics {
+  /*color: hsla(0, 1%, 90%, .7);*/
   /*color: #606060;*/
   overflow-y: scroll;
   /*padding-right: 10px;*/
@@ -181,6 +189,7 @@
 }
 
 .statistics-title {
+  /*color: hsla(0, 1%, 90%, .7);*/
   /*color: #606060;*/
   text-align: center;
   margin-bottom: 0;
