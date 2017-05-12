@@ -70,9 +70,9 @@ class PomodoroButtons extends Component {
     return (
       <div>
         <div className="buttons">
-          <div className="button dark-primary-color divider-color" onClick={toggleTimer}>{this.props.isRunning ? 'STOP' : 'START'}</div>
-          <div className="button dark-primary-color divider-color" onClick={nextTimer}>NEXT</div>
-          <div className="button dark-primary-color divider-color" onClick={resetAll}>RESET</div>
+          <div className="button divider-color" onClick={toggleTimer}>{this.props.isRunning ? 'STOP' : 'START'}</div>
+          <div className="button divider-color" onClick={nextTimer}>NEXT</div>
+          <div className="button divider-color" onClick={resetAll}>RESET</div>
         </div>
         <div className="button-settings" onClick={showHideSettings}><i className="fa fa-cog"></i></div>
       </div>
