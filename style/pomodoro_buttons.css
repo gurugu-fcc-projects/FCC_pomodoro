@@ -8,12 +8,12 @@
 .button {
   /*background-color: hsla(16, 75%, 55%, 0.2);*/
   color: inherit;
-  height: 70px; width: 70px;
+  height: 60px; width: 60px;
   padding: 10px;
   border: 1px solid;
   border-radius: 100%;
   margin: 5px;
-  line-height: 70px;
+  line-height: 60px;
   cursor: pointer;
   flex: 0 0 auto;
   transition: background-color .4s;
@@ -35,7 +35,7 @@
   position: absolute;
   top: 0; right: 0;
   margin: 10px;
-  font-size: 2.5em;
+  font-size: 2em;
   cursor: pointer;
   transition: color .3s;
 }
