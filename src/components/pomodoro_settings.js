@@ -32,8 +32,12 @@ class PomodoroSettings extends Component {
       const newValue = determineNewValue(buttonClass, timer);
 
       if (newValue < 1) { // min value 1
+        this.props.showMessage('Minimum value reached!');
+        showMessageField();
         return false;
       } else if (newValue > 99) { // max value 99
+        this.props.showMessage('Maximum value reached!');
+        showMessageField();
         return false;
       } else {
         this.props.changeTimerLength(timer, newValue);
