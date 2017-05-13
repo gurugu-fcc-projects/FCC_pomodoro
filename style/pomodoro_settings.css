@@ -164,21 +164,28 @@
 
 .set-timers-button-save {
   /*background-color: hsla(360, 1%, 78%, 1);*/
+  background: #E0E0E0;
+  color: hsla(210, 79%, 46%, 1);
   padding: 10px 0;
-  border: 1px solid #1976D2;
+  border: 1px solid hsla(210, 79%, 46%, 1);
   margin-top: 15px;
   text-align: center;
   font-size: 1.3em;
   width: 100%;
-  transition: background-color .2s;
+  transition: background-color .2s, color .2s;
 }
 
 .set-timers-button-save:hover {
+  background-color: hsla(210, 59%, 46%, .5);
+  color: #E0E0E0;
+  padding: 10px 0;
+  border: 1px solid hsla(210, 59%, 46%, .5);
   /*background-color: hsla(360, 1%, 71%, 1);*/
 }
 
 .set-timers-button-save:active {
   /*background-color: hsla(360, 1%, 67%, 1);*/
+  background-color: hsla(210, 59%, 46%, 1);
 }
 
 /*======================
@@ -188,9 +195,11 @@
 .statistics {
   /*color: hsla(0, 1%, 90%, .7);*/
   /*color: #606060;*/
-  overflow-y: scroll;
+  overflow-x: hidden;
+  overflow-y: auto;
   /*padding-right: 10px;*/
   margin: 10px;
+  font-size: .8em;
 }
 
 .statistics-title {
