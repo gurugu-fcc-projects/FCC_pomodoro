@@ -169,28 +169,29 @@
 
 .set-timers-button-save {
   /*background-color: hsla(360, 1%, 78%, 1);*/
-  background: #E0E0E0;
-  color: hsla(210, 79%, 46%, 1);
+  background: hsla(210, 79%, 46%, 1);
+  color: #E0E0E0;
   padding: 10px 0;
   border: 1px solid hsla(210, 79%, 46%, 1);
   margin-top: 15px;
   text-align: center;
   font-size: 1.3em;
   width: 100%;
-  transition: background-color .2s, color .2s;
+  transition: all .2s;
+  cursor: pointer;
 }
 
 .set-timers-button-save:hover {
-  background: hsla(210, 79%, 46%, 1);
-  color: #E0E0E0;
+  background: hsla(210, 79%, 38%, 1);
   padding: 10px 0;
-  border: 1px solid hsla(210, 79%, 46%, 1);
+  border: 1px solid hsla(210, 79%, 38%, 1);
   /*background-color: hsla(360, 1%, 71%, 1);*/
 }
 
 .set-timers-button-save:active {
   /*background-color: hsla(360, 1%, 67%, 1);*/
   background-color: hsla(210, 79%, 26%, 1);
+  color: hsla(16, 65%, 55%, 1);
 }
 
 /*======================

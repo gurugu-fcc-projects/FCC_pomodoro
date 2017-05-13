@@ -16,9 +16,11 @@ export const showTime = (time) => {
   const m = Math.floor(time % 3600 / 60);
   const s = Math.floor(time % 3600 % 60);
 
-  return (
-    (h > 0 ? h + ':' (m < 10 ? '0' : '') : '') + m + ':' + (s < 10 ? '0' : '') + s
-  );
+  const hours = h > 0 ? h + ':' : '';
+  const minutes = (m < 10 ? '0' : '') + m + ':';
+  const seconds = (s < 10 ? '0' : '') + s;
+
+  return hours + minutes + seconds;
 }
 
 export const testData = [
