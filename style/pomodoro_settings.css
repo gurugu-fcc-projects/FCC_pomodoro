@@ -112,11 +112,13 @@
 }
 
 .saved-timer-close:hover > i {
-  color: hsla(200, 100%, 100%, 0.8);
+  /*color: hsla(200, 100%, 100%, 0.8);*/
+  color: hsla(16, 65%, 55%, 1);
 }
 
 .saved-timer-close:active > i {
-  color: hsla(200, 100%, 100%, 1);
+  /*color: hsla(200, 100%, 100%, 1);*/
+  color: hsla(16, 85%, 60%, 1);
 }
 
 /*======================
