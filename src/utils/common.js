@@ -29,7 +29,7 @@ export const showMessageField = () => {
   messageField.classList.add('visible');
   window.setTimeout(() => {
     messageField.classList.remove('visible');
-  }, 1000);
+  }, 2000);
 }
 
 export const testData = [
