@@ -64,6 +64,14 @@ class PomodoroSettings extends Component {
             increaseDecrease(buttonClass, timer);
           }, 200);
         }, 500);
+
+        timeoutId = window.setTimeout(() => {
+          clearInterval(intervalId);
+          intervalId = window.setInterval(() => {
+            increaseDecrease(buttonClass, timer);
+          }, 50);
+        }, 3000);
+
       });
       button.addEventListener('mouseup', (event) => {
         clearInterval(intervalId);

@@ -82,6 +82,7 @@
   /*box-shadow: 2px 2px 3px #3f3f3f;*/
   /*width: 70px;*/
   margin: 5px;
+  font-size: 0.9em;
   cursor: pointer;
   transition: all 0.2s;
 }
