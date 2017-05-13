@@ -80,6 +80,7 @@ export default function (state = INIT_STATE, action) {
         currentSessionLength: action.payload.sessionLength,
         currentBreakLength: action.payload.breakLength,
         timeBackwards: action.payload.sessionLength,
+        timeForwards: 0,
         displayedCount: action.payload.sessionLength,
         isRunning: false
       };
