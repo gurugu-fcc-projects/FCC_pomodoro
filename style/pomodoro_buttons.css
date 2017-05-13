@@ -25,13 +25,16 @@
 }
 
 .button:hover {
-  background-color: hsla(210, 79%, 51%, 1);
   /*background-color: hsla(16, 75%, 55%, 0.7);*/
+  /*background-color: hsla(210, 79%, 51%, 1);*/
+  background-color: hsla(210, 79%, 38%, 1);
 }
 
 .button:active {
-  background-color: hsla(210, 79%, 56%, 1);
   /*background-color: hsla(16, 75%, 55%, 0.9);*/
+  /*background-color: hsla(210, 79%, 56%, 1);*/
+  background-color: hsla(210, 79%, 26%, 1);
+  color: hsla(16, 65%, 55%, 1);
 }
 
 .button-settings {

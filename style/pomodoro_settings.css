@@ -27,7 +27,7 @@
   /*background-color: hsla(16, 55%, 85%, 1);*/
   /*background: #2196F3;
   color: #FFFFFF;*/
-  background: #E0E0E0;
+  background-color: #E0E0E0;
   color: #2196F3;
   color: #1976D2;
   display: flex;
@@ -83,7 +83,7 @@
   /*width: 70px;*/
   margin: 5px;
   cursor: pointer;
-  transition: box-shadow 0.2s, background-color 0.2s;
+  transition: all 0.2s;
 }
 
 .saved-timer:hover {
@@ -102,6 +102,11 @@
 .saved-timer-values {
   flex: 1 0 auto;
   padding: 6px 4px 6px 6px;
+  transition: color 0.2s;
+}
+
+.saved-timer-values:active {
+  color: hsla(16, 65%, 55%, 1);
 }
 
 .saved-timer-close {
@@ -158,7 +163,8 @@
 
 .set-timer-button i:active {
   /*color: hsla(360, 1%, 67%, 1);*/
-  color: hsla(210, 79%, 33%, 1);
+  /*color: hsla(210, 79%, 33%, 1);*/
+  color: hsla(16, 65%, 55%, 1);
 }
 
 .set-timer-value {
@@ -170,7 +176,7 @@
 
 .set-timers-button-save {
   /*background-color: hsla(360, 1%, 78%, 1);*/
-  background: hsla(210, 79%, 46%, 1);
+  background-color: hsla(210, 79%, 46%, 1);
   color: #E0E0E0;
   padding: 10px 0;
   border: 1px solid hsla(210, 79%, 46%, 1);
@@ -183,7 +189,7 @@
 }
 
 .set-timers-button-save:hover {
-  background: hsla(210, 79%, 38%, 1);
+  background-color: hsla(210, 79%, 38%, 1);
   padding: 10px 0;
   border: 1px solid hsla(210, 79%, 38%, 1);
   /*background-color: hsla(360, 1%, 71%, 1);*/
