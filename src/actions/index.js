@@ -9,7 +9,8 @@ import {
   UPDATE_SET_TIMERS,
   SAVE_TIMER_DATA,
   SAVE_START_TIME,
-  SAVE_END_TIME
+  SAVE_END_TIME,
+  SHOW_MESSAGE
 } from './types';
 
 export const startStopTimer = (runState) => {
@@ -93,5 +94,12 @@ export const saveEndTime = (time) => {
   return {
     type: SAVE_END_TIME,
     payload: time
+  };
+}
+
+export const showMessage = (message) => {
+  return {
+    type: SHOW_MESSAGE,
+    payload: message
   };
 }

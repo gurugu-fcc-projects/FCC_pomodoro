@@ -9,7 +9,8 @@ import {
   UPDATE_SET_TIMERS,
   SAVE_TIMER_DATA,
   SAVE_START_TIME,
-  SAVE_END_TIME
+  SAVE_END_TIME,
+  SHOW_MESSAGE
 } from '../actions/types';
 
 import { testData } from '../utils/common';
@@ -31,7 +32,8 @@ const INIT_STATE = {
   ],
   statistics: [...testData],
   timerStart: '',
-  timerEnd: ''
+  timerEnd: '',
+  message: ''
 };
 
 export default function (state = INIT_STATE, action) {
@@ -115,6 +117,11 @@ export default function (state = INIT_STATE, action) {
       return {
         ...state,
         timerEnd: action.payload
+      };
+    case SHOW_MESSAGE:
+      return {
+        ...state,
+        message: action.payload
       };
     default:
       return state;

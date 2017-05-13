@@ -9,3 +9,4 @@ export const UPDATE_SET_TIMERS = 'update_set_timers';
 export const SAVE_TIMER_DATA = 'save_timer_data';
 export const SAVE_START_TIME = 'save_start_time';
 export const SAVE_END_TIME = 'save_end_time';
+export const SHOW_MESSAGE = 'show_message';

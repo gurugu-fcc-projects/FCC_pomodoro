@@ -9,7 +9,8 @@ import {
   UPDATE_SET_TIMERS,
   SAVE_TIMER_DATA,
   SAVE_START_TIME,
-  SAVE_END_TIME
+  SAVE_END_TIME,
+  SHOW_MESSAGE
 } from '../../src/actions/types';
 
 import {
@@ -24,7 +25,8 @@ import {
   saveTimer,
   saveTimerData,
   saveStartTime,
-  saveEndTime
+  saveEndTime,
+  showMessage
 } from '../../src/actions/index';
 
 describe('startStopTimer', () => {
@@ -143,5 +145,12 @@ describe('saveEndTime', () => {
   it('save timer end time', () => {
     const actionObject = {type: SAVE_END_TIME, payload: 100000};
     expect(saveEndTime(100000)).toEqual(actionObject);
+  });
+});
+
+describe('showMessage', () => {
+  it('passes a specified message', () => {
+    const actionObject = {type: SHOW_MESSAGE, payload: 'Maximum'};
+    expect(showMessage('Maximum')).toEqual(actionObject);
   });
 });
