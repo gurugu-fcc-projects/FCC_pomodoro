@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 
-import { showHideSettings, showTime } from '../utils/common';
+import { showHideSettings, showTime, showMessageField } from '../utils/common';
 import '../../style/pomodoro_settings.css';
 
 class PomodoroSettings extends Component {
@@ -107,6 +107,7 @@ class PomodoroSettings extends Component {
         this.props.updateSetTimers([...savedTimers, newTimer]);
       } else {
         this.props.showMessage('Maximum number of timers reached!');
+        showMessageField();
       }
     }
 

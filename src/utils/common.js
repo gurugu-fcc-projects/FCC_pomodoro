@@ -23,6 +23,15 @@ export const showTime = (time) => {
   return hours + minutes + seconds;
 }
 
+export const showMessageField = () => {
+  const messageField = document.querySelector('.message');
+
+  messageField.classList.add('visible');
+  window.setTimeout(() => {
+    messageField.classList.remove('visible');
+  }, 1000);
+}
+
 export const testData = [
   {
     id: 1,
