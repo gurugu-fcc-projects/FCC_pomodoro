@@ -34,8 +34,31 @@
     padding-bottom: 10px;
   }
 
+  /*===================
+  Settings section
+  ====================*/
+  .settings {
+    flex-direction: row;
+    /*right: -300px;*/
+    transform: translateX(520px);
+    height: 100%; width: 520px;
+  }
+
+  .settings-show {
+    transform: translateX(0);
+  }
+
+  .first-column,
+  .second-column {
+    flex: 0 0 260px;
+  }
+
+  .first-column {
+    justify-content: space-between;
+  }
 }
 
+/* iPhone 5 landscape */
 @media only screen
   and (max-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2)
@@ -58,5 +81,22 @@
 
   .set-timers-button-save {
     margin-top: 5px;
+  }
+
+  .first-column {
+    justify-content: flex-start;
+  }
+}
+
+/* iPad landscape */
+@media only screen
+  and (min-width: 1024px)
+  and (orientation: landscape) {
+
+  /*===================
+  Settings section
+  ====================*/
+  .first-column {
+    justify-content: flex-start;
   }
 }

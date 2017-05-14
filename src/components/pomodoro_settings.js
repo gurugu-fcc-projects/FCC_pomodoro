@@ -175,36 +175,40 @@ class PomodoroSettings extends Component {
         <div className="modal">
         </div>
         <aside className="settings">
-          <section className="saved-timers">
-            {savedTimersList}
-          </section>
-          <section className="set-timers">
-            <div className="set-timer">
-              <div className="set-timer-title">SESSION</div>
-              <div className="set-timer-button session-decrease">
-                <i className="fa fa-minus-circle"></i>
-              </div>
-              <div className="set-timer-value">{sessionLength}</div>
-              <div className="set-timer-button session-increase">
-                <i className="fa fa-plus-circle"></i>
-              </div>
+          <section className="first-column">
+            <div className="saved-timers">
+              {savedTimersList}
             </div>
-            <div className="set-timer">
-              <div className="set-timer-title">BREAK</div>
-              <div className="set-timer-button break-decrease">
-                <i className="fa fa-minus-circle"></i>
+            <div className="set-timers">
+              <div className="set-timer">
+                <div className="set-timer-title">SESSION</div>
+                <div className="set-timer-button session-decrease">
+                  <i className="fa fa-minus-circle"></i>
+                </div>
+                <div className="set-timer-value">{sessionLength}</div>
+                <div className="set-timer-button session-increase">
+                  <i className="fa fa-plus-circle"></i>
+                </div>
               </div>
-              <div className="set-timer-value">{breakLength}</div>
-              <div className="set-timer-button break-increase">
-                <i className="fa fa-plus-circle"></i>
+              <div className="set-timer">
+                <div className="set-timer-title">BREAK</div>
+                <div className="set-timer-button break-decrease">
+                  <i className="fa fa-minus-circle"></i>
+                </div>
+                <div className="set-timer-value">{breakLength}</div>
+                <div className="set-timer-button break-increase">
+                  <i className="fa fa-plus-circle"></i>
+                </div>
               </div>
+              <div className="set-timers-button-save" onClick={saveTimer}>SAVE</div>
             </div>
-            <div className="set-timers-button-save" onClick={saveTimer}>SAVE</div>
           </section>
-          <h3 className="statistics-title">STATISTICS</h3>
-          <section className="statistics">
-            <div className="statistics-inside">
-              {statisticsList}
+          <section className="second-column">
+            <h3 className="statistics-title">STATISTICS</h3>
+            <div className="statistics">
+              <div className="statistics-inside">
+                {statisticsList}
+              </div>
             </div>
           </section>
         </aside>

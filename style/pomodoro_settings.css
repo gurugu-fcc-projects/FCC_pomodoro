@@ -32,6 +32,7 @@
   color: #1976D2;
   display: flex;
   flex-direction: column;
+  /*justify-content: space-between;*/
   position: fixed;
   right: -260px;
   top: 0; right: 0;
@@ -46,6 +47,13 @@
 
 .settings-show {
   transform: translateX(0);
+}
+
+.first-column,
+.second-column {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
 }
 
 /*.saved-timers,
