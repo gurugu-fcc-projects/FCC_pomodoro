@@ -1,8 +1,37 @@
 @media only screen and (orientation: landscape) {
 
+  /*===================
+  Preview section
+  ====================*/
+  .preview h3 {
+    margin: 10px 0;
+  }
+
   .preview-session,
   .preview-break {
     font-size: 0.8em;
     padding: 5px 20px;
   }
+
+  /*===================
+  Timer section
+  ====================*/
+  .timer {
+    font-size: 2em;
+    text-align: center;
+    padding: 20px 0 10px 0;
+  }
+
+  .timer h3 {
+    margin: 0 0 10px 0;
+  }
+
+  /*===================
+  Buttons section
+  ====================*/
+  .buttons {
+    padding-top: 0;
+    padding-bottom: 10px;
+  }
+
 }
