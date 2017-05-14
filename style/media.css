@@ -35,3 +35,28 @@
   }
 
 }
+
+@media only screen
+  and (max-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+
+  /*===================
+  Settings section
+  ====================*/
+  .saved-timers {
+    margin: 5px 5px 0 5px;
+  }
+
+  .set-timers {
+    margin: 0 10px;
+  }
+
+  .set-timer-title {
+    font-size: 1em;
+  }
+
+  .set-timers-button-save {
+    margin-top: 5px;
+  }
+}
