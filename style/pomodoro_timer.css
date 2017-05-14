@@ -7,3 +7,7 @@
 .timer h3 {
   margin: 0 0 40px 0;
 }
+
+.timer .timer-overdue {
+  color: hsla(16, 65%, 55%, 1);
+}

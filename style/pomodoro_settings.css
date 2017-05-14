@@ -260,5 +260,5 @@
 }
 
 .statistics-timer-sub span:nth-child(2) span {
-  color: red;
+  color: hsla(16, 65%, 55%, 1);
 }

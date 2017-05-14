@@ -12,7 +12,9 @@ class PomodoroTimer extends Component {
     return (
       <div className="timer">
         <h3>{currentTimer}</h3>
-        {(timeForwards > 0 ? '-' : '') + showTime(displayedCount)}
+        <div className={timeForwards > 0 ? 'timer-overdue' : ''}>
+          {(timeForwards > 0 ? '-' : '') + showTime(displayedCount)}
+        </div>
       </div>
     );
   }
