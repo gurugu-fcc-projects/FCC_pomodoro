@@ -1,0 +1,8 @@
+@media only screen and (orientation: landscape) {
+
+  .preview-session,
+  .preview-break {
+    font-size: 0.8em;
+    padding: 5px 20px;
+  }
+}

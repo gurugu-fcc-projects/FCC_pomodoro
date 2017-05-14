@@ -9,8 +9,7 @@ import '../../style/pomodoro_settings.css';
 class PomodoroSettings extends Component {
   componentDidMount() {
     const setTimerButtons = document.querySelectorAll('.set-timer-button');
-    let timeoutId, intervalId;
-    let timeoutIdTwo, intervalIdTwo;
+    let timeoutId, intervalId, timeoutIdTwo, intervalIdTwo;
 
 
     const determineTimer = (elementClass) => {
@@ -58,10 +57,6 @@ class PomodoroSettings extends Component {
       button.addEventListener('mousedown', (event) => {
         const buttonClass = event.target.parentNode.classList[1];
         const timer = determineTimer(buttonClass);
-        // let timeoutId, intervalId;
-
-        // clearInterval(intervalId);
-        // clearTimeout(timeoutId);
 
         increaseDecrease(buttonClass, timer);
 
@@ -70,9 +65,6 @@ class PomodoroSettings extends Component {
             increaseDecrease(buttonClass, timer);
           }, 200);
         }, 500);
-
-        // timeoutIds.push(timeoutId);
-        // intervalIds.push(intervalId);
 
         timeoutIdTwo = window.setTimeout(() => {
           clearInterval(intervalId);
@@ -87,9 +79,6 @@ class PomodoroSettings extends Component {
         clearTimeout(timeoutId);
         clearInterval(intervalIdTwo);
         clearTimeout(timeoutIdTwo);
-
-        // intervalIds.forEach((intervalId) => clearInterval(intervalId));
-        // timeoutIds.forEach((timeoutId) => clearTimeout(timeoutId));
       });
     });
   }
