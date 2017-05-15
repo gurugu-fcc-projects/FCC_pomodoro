@@ -1,4 +1,6 @@
-@media only screen and (orientation: landscape) {
+@media only screen
+  and (max-height: 568px)
+  and (orientation: landscape) {
 
   /*===================
   Preview section
