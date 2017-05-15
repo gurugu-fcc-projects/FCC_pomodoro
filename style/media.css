@@ -58,6 +58,14 @@
   .first-column {
     justify-content: space-between;
   }
+
+  /*===================
+  Footer
+  ====================*/
+  .footer {
+    font-size: .6em;
+  }
+
 }
 
 /* iPhone 5 landscape */

@@ -20,7 +20,7 @@ class PomodoroMain extends Component {
           <PomodoroButtons />
         </div>
         <div className="message">{message}</div>
-        <div className="footer">Created by GuRuGuMaWaRu, 2017</div>
+        <div className="footer">Created by <span>GuRuGuMaWaRu</span>, 2017</div>
       </div>
     );
   }
