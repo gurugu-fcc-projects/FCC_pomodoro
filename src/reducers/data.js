@@ -30,7 +30,7 @@ const INIT_STATE = {
     {id: 2, session: 30, break: 5},
     {id: 3, session: 45, break: 10}
   ],
-  statistics: [...testData],
+  statistics: [],
   timerStart: '',
   timerEnd: '',
   message: ''
