@@ -26,10 +26,11 @@ class PomodoroButtons extends Component {
     }
     /* helper = runningTime countdown */
     const countdown = () => {
-      // this.props.runningTime <= 0 || this.props.isRunning === false
-      //   ? stopTimer()
-      //   : this.props.runTimer(this.props.runningTime);
-
+      /* play alarm sound */
+      if (this.props.timeBackwards === 1) {
+        var audio = new Audio('http://www.orangefreesounds.com/wp-content/uploads/2015/02/Funny-doorbell-sound-3.mp3');
+        audio.play();
+      }
       if (this.props.isRunning === false) {
         stopTimer();
       } else if (this.props.timeBackwards <= 0) {
