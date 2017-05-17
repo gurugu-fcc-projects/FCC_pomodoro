@@ -13,8 +13,6 @@ import {
   SHOW_MESSAGE
 } from '../actions/types';
 
-import { testData } from '../utils/common';
-
 const INIT_STATE = {
   currentSessionLength: 1500,
   currentBreakLength: 300,

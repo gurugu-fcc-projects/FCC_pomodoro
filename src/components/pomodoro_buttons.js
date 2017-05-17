@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import * as actions from '../actions';
 
+import * as actions from '../actions';
 import { showHideSettings } from '../utils/common';
 import '../../style/pomodoro_buttons.css';
 
@@ -16,6 +16,7 @@ class PomodoroButtons extends Component {
       currentTimer,
       timerStart
     } = this.props;
+    
     /* helper = stop timer */
     const stopTimer = () => {
       const currentDate = new Date();

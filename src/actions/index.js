@@ -18,21 +18,21 @@ export const startStopTimer = (runState) => {
     type: START_STOP_TIMER,
     payload: runState === 'start' ? true : false
   };
-}
+};
 
 export const countBackwards = (timeBackwards) => {
   return {
     type: COUNT_BACKWARDS,
     payload: timeBackwards - 1
   };
-}
+};
 
 export const countForwards = (timeForwards) => {
   return {
     type: COUNT_FORWARDS,
     payload: timeForwards + 1
   };
-}
+};
 
 export const changeTimer = (currentTimer, sessionLength, breakLength) => {
   return {
@@ -42,7 +42,7 @@ export const changeTimer = (currentTimer, sessionLength, breakLength) => {
       runningTime: currentTimer === 'session' ? breakLength : sessionLength
     }
   };
-}
+};
 
 export const changeTimerLength = (timer, newValue) => {
   return {
@@ -52,13 +52,13 @@ export const changeTimerLength = (timer, newValue) => {
       newValue: newValue
     }
   };
-}
+};
 
 export const resetAll = () => {
   return {
     type: RESET_ALL
   };
-}
+};
 
 export const chooseTimer = (sessionLength, breakLength) => {
   return {
@@ -68,38 +68,38 @@ export const chooseTimer = (sessionLength, breakLength) => {
       breakLength: breakLength * 60
     }
   };
-}
+};
 
 export const updateSetTimers = (newTimers) => {
   return {
     type: UPDATE_SET_TIMERS,
     payload: newTimers
   };
-}
+};
 
 export const saveTimerData = () => {
   return {
     type: SAVE_TIMER_DATA
   };
-}
+};
 
 export const saveStartTime = (time) => {
   return {
     type: SAVE_START_TIME,
     payload: time
   };
-}
+};
 
 export const saveEndTime = (time) => {
   return {
     type: SAVE_END_TIME,
     payload: time
   };
-}
+};
 
 export const showMessage = (message) => {
   return {
     type: SHOW_MESSAGE,
     payload: message
   };
-}
+};

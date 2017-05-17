@@ -41,7 +41,6 @@
   ====================*/
   .settings {
     flex-direction: row;
-    /*right: -300px;*/
     transform: translateX(520px);
     height: 100%; width: 520px;
   }
