@@ -49,7 +49,6 @@ class PomodoroSettings extends Component {
       const buttonClass = event.target.parentNode.classList[1];
       const timer = determineTimer(buttonClass);
 
-      console.log(event.type);
       increaseDecrease(buttonClass, timer);
 
       timeoutId = window.setTimeout(() => {
@@ -105,7 +104,6 @@ class PomodoroSettings extends Component {
         timer.classList.remove('selected');
       } else {
         allTimers.forEach((timer) => {
-					console.log(timer);
 				  timer.classList.remove('selected');
 				});
         timer.classList.add('selected');

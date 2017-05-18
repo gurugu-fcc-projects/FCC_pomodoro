@@ -16,7 +16,7 @@ class PomodoroButtons extends Component {
       currentTimer,
       timerStart
     } = this.props;
-    
+
     /* helper = stop timer */
     const stopTimer = () => {
       const currentDate = new Date();
@@ -72,9 +72,9 @@ class PomodoroButtons extends Component {
     return (
       <div>
         <div className="buttons">
-          <div className="button divider-color" onClick={toggleTimer}>{this.props.isRunning ? 'STOP' : 'START'}</div>
-          <div className="button divider-color" onClick={nextTimer}>NEXT</div>
-          <div className="button divider-color" onClick={resetAll}>RESET</div>
+          <div className="button divider-color no-select" onClick={toggleTimer}>{this.props.isRunning ? 'STOP' : 'START'}</div>
+          <div className="button divider-color no-select" onClick={nextTimer}>NEXT</div>
+          <div className="button divider-color no-select" onClick={resetAll}>RESET</div>
         </div>
         <div className="button-settings" onClick={showHideSettings}><i className="fa fa-cog"></i></div>
       </div>
