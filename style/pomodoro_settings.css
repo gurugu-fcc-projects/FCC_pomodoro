@@ -179,7 +179,7 @@
 ======================*/
 
 .statistics {
-  overflow-x: hidden;
+  /*overflow-x: hidden;*/
   overflow-y: auto;
   margin: 10px;
   font-size: .8em;

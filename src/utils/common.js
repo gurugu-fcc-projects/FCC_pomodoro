@@ -30,3 +30,8 @@ export const showMessageField = () => {
     messageField.classList.remove('visible');
   }, 2000);
 }
+
+// export const playSound = () => {
+//   var audio = new Audio('http://www.orangefreesounds.com/wp-content/uploads/2015/02/Funny-doorbell-sound-3.mp3');
+//   audio.play();
+// }

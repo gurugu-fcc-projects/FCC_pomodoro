@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore } from 'redux';
 
 import App from './components/app';
 import reducers from './reducers';
@@ -31,6 +31,6 @@ TO-DOs
 1 - no sound on mobile!!
 === 2 - no long press on mobile!! ===
 === 3 - main buttons have blue selection highlighting!! ===
-4 - data should be saved locally
+=== 4 - data should be saved locally ===
 
 */

@@ -29,7 +29,7 @@ class PomodoroButtons extends Component {
     const countdown = () => {
       /* play alarm sound */
       if (this.props.timeBackwards === 1) {
-        var audio = new Audio('http://www.orangefreesounds.com/wp-content/uploads/2015/02/Funny-doorbell-sound-3.mp3');
+        const audio = new Audio('http://www.orangefreesounds.com/wp-content/uploads/2015/02/Funny-doorbell-sound-3.mp3');
         audio.play();
       }
       if (this.props.isRunning === false) {
@@ -43,6 +43,10 @@ class PomodoroButtons extends Component {
     /* helper = start timer */
     const startTimer = () => {
       const currentDate = new Date();
+
+      const audio = new Audio('http://www.orangefreesounds.com/wp-content/uploads/2015/02/Funny-doorbell-sound-3.mp3');
+      audio.muted = true;
+      audio.play();
 
       this.props.saveStartTime(currentDate.toLocaleTimeString('en-US', {hour12: false}));
       this.props.startStopTimer('start');
