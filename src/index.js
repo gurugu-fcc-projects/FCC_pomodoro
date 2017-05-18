@@ -14,3 +14,13 @@ ReactDOM.render(
   </Provider>
   , document.getElementById('root')
 );
+
+/*
+TO-DOs
+
+1 - no sound on mobile!!
+2 - no long press on mobile!!
+3 - main buttons have selection halo!!
+4 - data should be saved locally
+
+*/

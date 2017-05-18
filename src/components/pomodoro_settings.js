@@ -45,6 +45,34 @@ class PomodoroSettings extends Component {
       }
     }
 
+    const startPressing = (event) => {
+      const buttonClass = event.target.parentNode.classList[1];
+      const timer = determineTimer(buttonClass);
+
+      console.log(event.type);
+      increaseDecrease(buttonClass, timer);
+
+      timeoutId = window.setTimeout(() => {
+        intervalId = window.setInterval(() => {
+          increaseDecrease(buttonClass, timer);
+        }, 200);
+      }, 500);
+
+      timeoutIdTwo = window.setTimeout(() => {
+        clearInterval(intervalId);
+        intervalIdTwo = window.setInterval(() => {
+          increaseDecrease(buttonClass, timer);
+        }, 50);
+      }, 2500);
+    }
+
+    const endPressing = () => {
+      clearInterval(intervalId);
+      clearTimeout(timeoutId);
+      clearInterval(intervalIdTwo);
+      clearTimeout(timeoutIdTwo);
+    }
+
     // show-hide settings panel
     window.addEventListener('click', (event) => {
       if (event.target === document.querySelector('.modal')) {
@@ -54,32 +82,10 @@ class PomodoroSettings extends Component {
 
     // increase-decrease timer with various speed
     setTimerButtons.forEach((button) => {
-      button.addEventListener('mousedown', (event) => {
-        const buttonClass = event.target.parentNode.classList[1];
-        const timer = determineTimer(buttonClass);
-
-        increaseDecrease(buttonClass, timer);
-
-        timeoutId = window.setTimeout(() => {
-          intervalId = window.setInterval(() => {
-            increaseDecrease(buttonClass, timer);
-          }, 200);
-        }, 500);
-
-        timeoutIdTwo = window.setTimeout(() => {
-          clearInterval(intervalId);
-          intervalIdTwo = window.setInterval(() => {
-            increaseDecrease(buttonClass, timer);
-          }, 50);
-        }, 2500);
-
-      });
-      button.addEventListener('mouseup', (event) => {
-        clearInterval(intervalId);
-        clearTimeout(timeoutId);
-        clearInterval(intervalIdTwo);
-        clearTimeout(timeoutIdTwo);
-      });
+      button.addEventListener('mousedown', startPressing);
+      button.addEventListener('touchstart', startPressing);
+      button.addEventListener('mouseup', endPressing);
+      button.addEventListener('touchend', endPressing);
     });
   }
 
@@ -98,7 +104,10 @@ class PomodoroSettings extends Component {
       if (timer.classList.contains('selected')) {
         timer.classList.remove('selected');
       } else {
-        allTimers.forEach((timer) => timer.classList.remove('selected'));
+        allTimers.forEach((timer) => {
+					console.log(timer);
+				  timer.classList.remove('selected');
+				});
         timer.classList.add('selected');
       }
       this.props.chooseTimer(sessionLength, breakLength);
