@@ -25,10 +25,10 @@
 
 .settings {
   background-color: #E0E0E0;
-  color: #2196F3;
   color: #1976D2;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   position: fixed;
   right: -260px;
   top: 0; right: 0;
@@ -46,7 +46,10 @@
 .second-column {
   display: flex;
   flex-direction: column;
-  flex: 0 0 auto;
+}
+
+.first-column {
+  flex: 1 0 auto;
 }
 
 /*======================
@@ -113,7 +116,6 @@
 ======================*/
 
 .set-timers {
-  flex: 0 0 15%;
   margin: 10px;
 }
 
@@ -179,8 +181,7 @@
 ======================*/
 
 .statistics {
-  /*overflow-x: hidden;*/
-  overflow-y: auto;
+  overflow: auto;
   margin: 10px;
   font-size: .8em;
 }
