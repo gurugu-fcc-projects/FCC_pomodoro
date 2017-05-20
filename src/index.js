@@ -5,7 +5,6 @@ import { createStore } from 'redux';
 
 import App from './components/app';
 import reducers from './reducers';
-import dataReducer from './reducers/data';
 import { loadState, saveState } from './utils/localStorage';
 
 const persistedState = loadState();
