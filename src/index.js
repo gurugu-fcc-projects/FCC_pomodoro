@@ -31,7 +31,7 @@ ReactDOM.render(
 /*
 TO-DOs
 
-1 - no sound on mobile
+=== 1 - no sound on mobile ===
 === 2 - no long press on mobile!! ===
 === 3 - main buttons have blue selection highlighting!! ===
 === 4 - data should be saved locally ===
