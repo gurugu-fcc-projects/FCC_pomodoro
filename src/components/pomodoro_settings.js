@@ -239,7 +239,7 @@ const mapStateToProps = (state) => {
   return {
     sessionLength: state.data.sessionLength,
     breakLength: state.data.breakLength,
-    savedTimers: state.data.savedTimers,
+    savedTimers: state.savedData.savedTimers,
     statistics: state.data.statistics
   };
 }

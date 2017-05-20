@@ -6,7 +6,6 @@ import {
   CHANGE_TIMER_LENGTH,
   RESET_ALL,
   CHOOSE_TIMER,
-  UPDATE_SET_TIMERS,
   SAVE_TIMER_DATA,
   SAVE_START_TIME,
   SAVE_END_TIME,
@@ -14,6 +13,7 @@ import {
 } from '../actions/types';
 
 const INIT_STATE = {
+  statistics: [],
   currentSessionLength: 1500,
   currentBreakLength: 300,
   sessionLength: 1,
@@ -23,12 +23,6 @@ const INIT_STATE = {
   displayedCount: 1500,
   isRunning: false,
   currentTimer: 'session',
-  savedTimers: [
-    {id: 1, session: 25, break: 5},
-    {id: 2, session: 30, break: 5},
-    {id: 3, session: 45, break: 10}
-  ],
-  statistics: [],
   timerStart: '',
   timerEnd: '',
   message: ''
@@ -83,11 +77,6 @@ export default function (state = INIT_STATE, action) {
         timeForwards: 0,
         displayedCount: action.payload.sessionLength,
         isRunning: false
-      };
-    case UPDATE_SET_TIMERS:
-      return {
-        ...state,
-        savedTimers: action.payload
       };
     case SAVE_TIMER_DATA:
       const originalLength = state.currentTimer === 'session'

@@ -28,7 +28,7 @@
   color: #1976D2;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   position: fixed;
   right: -260px;
   top: 0; right: 0;
@@ -49,7 +49,7 @@
 }
 
 .first-column {
-  flex: 1 0 auto;
+  flex: 0 0 auto;
 }
 
 /*======================

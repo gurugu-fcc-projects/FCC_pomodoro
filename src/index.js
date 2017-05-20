@@ -5,6 +5,7 @@ import { createStore } from 'redux';
 
 import App from './components/app';
 import reducers from './reducers';
+import dataReducer from './reducers/data';
 import { loadState, saveState } from './utils/localStorage';
 
 const persistedState = loadState();
@@ -15,7 +16,9 @@ const store = createStore(
 );
 
 store.subscribe(() => {
-  saveState(store.getState());
+  saveState({
+    savedData: store.getState().savedData
+  });
 });
 
 ReactDOM.render(
@@ -32,7 +35,7 @@ TO-DOs
 === 2 - no long press on mobile!! ===
 === 3 - main buttons have blue selection highlighting!! ===
 === 4 - data should be saved locally ===
-5 - statistics do not scroll in portrait mode
-6 - do not save into localStorage all data
+=== 5 - statistics do not scroll in portrait mode ===
+=== 6 - do not save into localStorage all data ===
 
 */
