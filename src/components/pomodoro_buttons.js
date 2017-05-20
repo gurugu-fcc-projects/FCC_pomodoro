@@ -17,6 +17,8 @@ class PomodoroButtons extends Component {
       timerStart
     } = this.props;
 
+    const audio = new Audio('http://www.orangefreesounds.com/wp-content/uploads/2015/02/Funny-doorbell-sound-3.mp3');
+
     /* helper = stop timer */
     const stopTimer = () => {
       const currentDate = new Date();
@@ -29,7 +31,7 @@ class PomodoroButtons extends Component {
     const countdown = () => {
       /* play alarm sound */
       if (this.props.timeBackwards === 1) {
-        const audio = new Audio('http://www.orangefreesounds.com/wp-content/uploads/2015/02/Funny-doorbell-sound-3.mp3');
+        audio.muted = false;
         audio.play();
       }
       if (this.props.isRunning === false) {
@@ -44,7 +46,7 @@ class PomodoroButtons extends Component {
     const startTimer = () => {
       const currentDate = new Date();
 
-      const audio = new Audio('http://www.orangefreesounds.com/wp-content/uploads/2015/02/Funny-doorbell-sound-3.mp3');
+      // const audio = new Audio('http://www.orangefreesounds.com/wp-content/uploads/2015/02/Funny-doorbell-sound-3.mp3');
       audio.muted = true;
       audio.play();
 
