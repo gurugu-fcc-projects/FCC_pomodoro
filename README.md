@@ -13,7 +13,7 @@ This is where I wasn't all that successful with design part, but what was import
 ## Links
 
 - [ ] this project at codepen: [https://codepen.io/GuRuGu/full/OmwKjm/](https://codepen.io/GuRuGu/full/OmwKjm/)
-- [ ] this project at gh-pages: [https://gurugumawaru.github.io/FCC_pomodoro/](https://gurugumawaru.github.io/FCC_pomodoro/)
+- [ ] this project at gh-pages: [https://gurugu-fcc-projects.github.io/FCC_pomodoro/](https://gurugu-fcc-projects.github.io/FCC_pomodoro/)
 - [ ] freecodecamp challenge: [https://learn.freecodecamp.org/front-end-libraries/front-end-libraries-projects/build-a-pomodoro-clock](https://learn.freecodecamp.org/front-end-libraries/front-end-libraries-projects/build-a-pomodoro-clock)
 
 ## Video Walkthrough
